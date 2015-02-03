@@ -1,16 +1,13 @@
-\documentclass[letterpaper,twocolumn,10pt]{article}
-%\documentclass[10pt, conference, compsocconf,hyphens]{IEEEtran}
-\usepackage{usenix,epsfig,endnotes}
+\documentclass[10pt, conference, compsocconf,hyphens]{IEEEtran}
 \usepackage{mathptmx}
 \usepackage{amsmath}
-\usepackage{mathtools}
+%\usepackage{mathtools}
 \usepackage{courier}
 \usepackage[scaled=.92]{helvet}
 
-\usepackage[pdfborder={0 0 0},bookmarks=false,breaklinks]{hyperref}
+\usepackage[pdfborder={0 0 0},bookmarks=false,breaklinks,draft]{hyperref}
 
 \usepackage{graphicx}
-
 \usepackage{color}
 \usepackage{xspace}
 \usepackage{listings}
@@ -18,6 +15,10 @@
 \usepackage[numbers,sort]{natbib}
 \usepackage{ragged2e}
 \usepackage{tikz}
+\usepackage{dcolumn}
+\usepackage{dsfont}
+
+\usepackage{listings}
 
 \lstset{language=C,basicstyle=\ttfamily,xleftmargin=2em}
 
@@ -35,19 +36,30 @@
 \fi
 \usepackage{flushend}
 
-\usepackage[load-configurations=binary]{siunitx}
-%\usepackage{subfig}
+\usepackage[binary-units]{siunitx}
+\usepackage{subcaption}
+\usepackage{multirow}
 %\usepackage[title,header]{appendix}
 \usepackage{lipsum}
 \usepackage[absolute]{textpos}
 \usepackage[T1]{fontenc}
-\usepackage{caption}
-\usepackage{subcaption}
+
+\providecommand{\st}{\ensuremath{\mathrm{\ s.t.\ }}}
+
+\providecommand{\bagmap}{\texttt{bagmap}}
+\providecommand{\bagsum}{\texttt{bagsum}}
+\providecommand{\bagsize}{\texttt{bagsize}}
+\providecommand{\bagsplit}{\texttt{bagsplit}}
+
+\providecommand{\lone}{\ensuremath{\ell{}_1}}
 
 \hyphenation{white-list}
 
 % taken from hs's mary.tex, and tracing back to knuth.
 \def\dash---{\kern.16667em---\penalty\exhyphenpenalty\hskip.16667em\relax}
+
+% C++ macro from john mitchell
+\def\CC{C\raise.22ex\hbox{{\footnotesize +}}\raise.22ex\hbox{\footnotesize +}\xspace}
 
 % Make URLs linebreak better (hat-tip alexras)
   % A sequence of BigBreaks will be treated as one break, so it will only be able to break after ://
@@ -57,18 +69,45 @@
   % (More aggressive) Any letter and / are treated as breakable characters
   \renewcommand{\UrlBreaks}{\do\/\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z}
 
-\providecommand{\script}{\texttt{<script>}}
-\providecommand{\canvas}{\texttt{<canvas>}}
-\providecommand{\twod}{\texttt{2d}}
-\providecommand{\webgl}{\texttt{webgl}}
-\providecommand{\urandom}{\texttt{/dev/urandom}}
-\providecommand{\air}{\texttt{add\_\-interrupt\_\-randomness}}
-\providecommand{\grb}{\texttt{get\_\-random\_\-bytes}}
-\providecommand{\sk}{\texttt{start\_\-kernel}}
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]'',
+  morestring=[b]'
+}
 
-\newcommand\todo[1]{\textcolor{red}{TODO:#1}}
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true,
+        alsoletter={<>=-},
+        otherkeywords={
+        % HTML tags
+        <feConvolveMatrix, />
+        },
+        ndkeywords={
+        % General
+        =,
+        % HTML attributes
+        charset=, id=, width=, height=, in=, order=, edgeMode=, kernelMatrix=, preserveAlpha=,
+        % CSS properties
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:,
+        },
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}
 
-\hyphenation{Friend-ly-ARM}
+\lstset{%
+    % Code
+    language=HTML5,
+    alsolanguage=JavaScript,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true
+ }
+
+\providecommand{\setjmp}{\texttt{setjmp}}
+\providecommand{\longjmp}{\texttt{longjmp}}
 
 % Alter some LaTeX defaults for better treatment of figures:
     % See p.105 of "TeX Unbound" for suggested values.
@@ -100,18 +139,51 @@
 \def\@copyrightspace{}
 \makeatother
 
+% Support cool highlighting boxes in lstlisting (from
+% http://tex.stackexchange.com/questions/15237/highlight-text-in-code-listing-while-also-keeping-syntax-highlighting)
+\makeatletter
+\newenvironment{btHighlight}[1][]
+{\begingroup\tikzset{bt@Highlight@par/.style={#1}}\begin{lrbox}{\@tempboxa}}
+{\end{lrbox}\bt@HL@box[bt@Highlight@par]{\@tempboxa}\endgroup}
+
+\newcommand\btHL[1][]{%
+  \begin{btHighlight}[#1]\bgroup\aftergroup\bt@HL@endenv%
+}
+\def\bt@HL@endenv{%
+  \end{btHighlight}%
+  \egroup
+}
+\newcommand{\bt@HL@box}[2][]{%
+  \tikz[#1]{%
+    \pgfpathrectangle{\pgfpoint{1pt}{0pt}}{\pgfpoint{\wd #2}{\ht #2}}%
+    \pgfusepath{use as bounding box}%
+    \node[anchor=base west, fill=orange!30,outer sep=0pt,inner xsep=1pt, inner ysep=0pt, rounded corners=3pt, minimum height=\ht\strutbox+1pt,#1]{\raisebox{1pt}{\strut}\strut\usebox{#2}};
+  }%
+}
+\lstdefinestyle{Chighlight}{
+    language={C},basicstyle=\ttfamily,
+    moredelim=**[is][\btHL]{`}{`},
+    moredelim=**[is][{\btHL[fill=green!30,draw=red,dashed,thin]}]{@}{@},
+}
+\makeatother
+
+
+% support aligning a table column on .
+\newcolumntype{d}[1]{D{.}{.}{#1} }
+
 \def\sharedaffiliation{
 \end{tabular}
 \begin{tabular}{c}}
 \begin{document}
 
 
-\title{wifi stuff}
+\title{802.11ac and 802.11b/g/n Interference ??}
 
 \author{
-{\rm David Kohlbrenner}\\
+\IEEEauthorblockN{David Kohlbrenner, Jake Maskiewicz, Sean Hamilton}
+\IEEEauthorblockA{
 University of California, San Diego\\
-dkohlbre@cs.ucsd.edu
+}
 }
 
 
@@ -127,10 +199,9 @@ dkohlbre@cs.ucsd.edu
 
 {\small
 \bibliographystyle{IEEEtranSN}
-\bibliography{activeem}
+\bibliography{acproposal}
 }
 
 \typeout{}
-\typeout{ *** To embed fonts, run `gs -q -dNOPAUSE -dBATCH -dPDFSETTINGS=/prepress -sDEVICE=pdfwrite -sOutputFile=activeem_embedded.pdf activeem.pdf`}
 
 \end{document}
