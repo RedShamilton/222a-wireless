@@ -146,6 +146,8 @@
 {\begingroup\tikzset{bt@Highlight@par/.style={#1}}\begin{lrbox}{\@tempboxa}}
 {\end{lrbox}\bt@HL@box[bt@Highlight@par]{\@tempboxa}\endgroup}
 
+\newcommand\todo[1]{\textcolor{red}{TODO:#1}}
+
 \newcommand\btHL[1][]{%
   \begin{btHighlight}[#1]\bgroup\aftergroup\bt@HL@endenv%
 }

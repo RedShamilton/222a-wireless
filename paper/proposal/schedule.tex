@@ -1,8 +1,40 @@
 \section{Schedule}
 
-A schedule, specifying concretely what you intend to have accomplished by each
-of the two milestones below as well as for the final report/presentation. It is
-perfectly acceptable if the final deliverable is not a completion of the
-project---which, if successful, some members of the group may wish to continue
-after the term ends---but it does need to be something that can be clearly
-demonstrated/evaluated/graded.
+%A schedule, specifying concretely what you intend to have accomplished by each
+%of the two milestones below as well as for the final report/presentation. It is
+%perfectly acceptable if the final deliverable is not a completion of the
+%project---which, if successful, some members of the group may wish to continue
+%after the term ends---but it does need to be something that can be clearly
+%demonstrated/evaluated/graded.
+
+\subsection{Feb. 19}
+\begin{enumerate}
+\item All hardware in-hand, cataloged, and tested. We will have documented all the listed features and performance of all devices we will be testing.
+\item A testing suite, with associated metrics and benchmarking tools.
+\item Preliminary results from running the testing tools on our 802.11ac and 802.11 g/n networks in isolation (no notable RF interference)
+\end{enumerate}
+
+\subsection{Mar. 5}
+\begin{enumerate}
+\item Testing results from interference of 802.11ac and g/n networks in both RF and spatial interference
+\item Testing results for beamforming/spatial stream effects on interference
+\end{enumerate}
+This is basically all of our data collection near
+complete. Hopefully. There is enough time after this that if some
+parts slip we can continue tests.
+
+\subsection{Final}
+Full data on interference between 802.11ac and 802.11b/g/n networks. This will include:
+\begin{enumerate}
+\item Baseline data of what our hardware is capable of in isolation
+\item 802.11ac performance degredation in varying levels of 802.11b/g/n traffic
+\item 802.11b/g/n performance degredation in the presence of 802.11ac
+\item Above two, but with 802.11ac using spatial streams/beamforming
+\item Analysis of our results, based on both previous works (see
+  related work) and on what level of introspection we are able to
+  obtain during the project.
+\end{enumerate}
+
+I use 802.11b/g/n in this, since we are certain to use n, but are
+unsure if we will have time to do any meaningful testing comparing all
+802.11 consumer technologies.
