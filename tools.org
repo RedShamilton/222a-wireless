@@ -1,0 +1,18 @@
+* Iperf
+ - TCP/UDP measurement tool, appears to be pretty standard
+ - Iperf reports bandwidth, delay jitter, datagram loss.
+ - https://iperf.fr/
+
+* Agilent E4440A spectrum analyzer
+ - expensive
+ - seems nice
+ - we should get something like this?2
+
+* PackETH
+ - CLI for generating packet streams
+ - intended for ethernet
+ - http://packeth.sourceforge.net/packeth/Home.html
+
+* ipwstats
+ - just dumps basic info
+ - http://web.mit.edu/freebsd/head/tools/tools/ipw/ipwstats.c
