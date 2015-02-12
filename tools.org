@@ -2,7 +2,10 @@
  - TCP/UDP measurement tool, appears to be pretty standard
  - Iperf reports bandwidth, delay jitter, datagram loss.
  - https://iperf.fr/
-
+** Iperf3
+ - iperf3 is a re-implementation with more features
+ - https://github.com/esnet/iperf
+ - related app versions: http://accessagility.com/products/wifiperf.html
 * Agilent E4440A spectrum analyzer
  - expensive
  - seems nice
