@@ -1,16 +1,20 @@
 \section{Resources}
 
 %TODO
-We have a spectrum analyzer.
+We have a working 2.4/5GHz spectrum analyzer. We've used it to observe
+active networks, and to confirm that our testing location had no RF
+noise.
 
 \subsection{WAPs}
 
 %TODO details about WAPs
 
 We are currently using a Linksys ??? 802.11ac WAP, with SPECs. It is running
-VERSION of SOFTWARE, and we have installed iperf (see tools) directly on the
+VERSION of SOFTWARE, and we have installed iperf3 (see tools) directly on the
 router for testing.
 
+We have confirmed that we can enable/disable beamforming, which will
+allow us to ensure that we are testing its effects.
 
 \subsection{Clients}
 
@@ -19,6 +23,8 @@ We have a number of devices that can act as
 and two mobile devices, an Apple iPhone 6+ and an Android OnePlus
 One.
 
-We have also purchased a USB 801.11ac dongle so that we can utilize any other
-non-ac host as an ac host for testing.
-
+We have also purchased an ASUS USB 801.11ac dongle so that we can
+utilize any other non-ac host as an ac host for testing. While we were
+able to benchmark the dongle, due to the driver we were unable to
+benchmark it at full speeds. We intend to switch to a linux host for
+the dongle, so that we can have finer grained control over the device.
