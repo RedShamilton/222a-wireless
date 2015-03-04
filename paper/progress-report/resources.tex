@@ -1,16 +1,18 @@
 \section{Resources}
 
-%TODO
-We have a spectrum analyzer.
+\subsection{RF Test Equipment}
 
-\subsection{WAPs}
+We have a spectrum analyzer that is capable of monitoring 2.4GHz and 5GHz WiFi signals 
+allowing us to see all RF traffic in there spectrums beyond just WiFi. We are using it to observe
+active networks and to confirm that our testing location have minimal to no RF noise.
 
-%TODO details about WAPs
+\subsection{Wireless APs}
 
-We are currently using a Linksys ??? 802.11ac WAP, with SPECs. It is running
-VERSION of SOFTWARE, and we have installed iperf (see tools) directly on the
-router for testing.
-
+We are currently using the latest hardware model of the Linksys WRT1900AC 802.11ac WAP, with a 1.2 GHz dual core ARM
+processor and 256MB of DDR3 RAM. It is running OpenWRT Chaos Calmer(Dev Branch) with various tools, such as iperf3 (see tools) 
+directly on the router for testing. The OpenWRT platform gives us complete configuration control
+and insight into what the AP is doing. Most importantly, we have confirmed that we can enable/disable beamforming, which will
+allow us to ensure that we are testing its effects.
 
 \subsection{Clients}
 
@@ -19,6 +21,8 @@ We have a number of devices that can act as
 and two mobile devices, an Apple iPhone 6+ and an Android OnePlus
 One.
 
-We have also purchased a USB 801.11ac dongle so that we can utilize any other
-non-ac host as an ac host for testing.
-
+We have also purchased an ASUS USB 801.11ac dongle so that we can
+utilize any other non-ac host as an ac host for testing. While we were
+able to benchmark the dongle, due to the driver we were unable to
+benchmark it at full speeds. We intend to switch to a linux host for
+the dongle, so that we can have finer grained control over the device.
