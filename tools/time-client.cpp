@@ -41,6 +41,9 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
+	int yes = 1;
+	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes));
+
 	sock_in.sin_addr.s_addr = htonl(INADDR_BROADCAST);
 	sock_in.sin_port = htons(atoi(argv[1]));
 	sock_in.sin_family = AF_INET;
