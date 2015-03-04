@@ -9,6 +9,8 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#include <signal.h>
+
 #include <sysexits.h>
 
 #include <iostream>
@@ -16,6 +18,12 @@
 #include <thread>
 
 #define INTERVAL 100
+
+static bool keepRunning = true;
+
+void intHandler(int sig) {
+	keepRunning = false;
+}
 
 using hi_res_clock = std::chrono::high_resolution_clock;
 
@@ -26,6 +34,8 @@ int main(int argc, char* argv[])
 		std::cerr << "Usage: " << argv[0] << " <port>" << std::endl;
 		exit(EX_USAGE);
 	}
+
+	signal(SIGINT, intHandler);
 
 	// print out clock accuracy
 	std::cout << (double) hi_res_clock::period::num / hi_res_clock::period::den
@@ -69,7 +79,7 @@ int main(int argc, char* argv[])
 
 	// times are relative to start
 
-	for(uint32_t index = 0; true; ++index) {
+	for(uint32_t index = 0; keepRunning; ++index) {
 
 		auto time = hi_res_clock::now().time_since_epoch().count();
 

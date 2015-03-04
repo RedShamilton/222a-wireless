@@ -10,22 +10,30 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+#include <signal.h>
+
 #include <sysexits.h>
 
 #include <iostream>
 #include <chrono>
 
-#define MAXBUF 65536
+static bool keepRunning = true;
+
+void intHandler(int sig) {
+	keepRunning = false;
+}
 
 using hi_res_clock = std::chrono::high_resolution_clock;
 
 int main(int argc, char* argv[])
 {
 	// check for port argument
-	if(argc != 2) {
-		std::cerr << "Usage: " << argv[0] << " <port>" << std::endl;
+	if(argc != 3) {
+		std::cerr << "Usage: " << argv[0] << " <port> <filename>" << std::endl;
 		exit(EX_USAGE);
 	}
+
+	signal(SIGINT, intHandler);
 
 	// print out clock accuracy
 	std::cout << (double) hi_res_clock::period::num / hi_res_clock::period::den
@@ -53,8 +61,10 @@ int main(int argc, char* argv[])
 		exit(1);
 	}
 
+	FILE* fid = fopen(argv[2],"wb");
+
 	// ready to receive
-	while(true) {
+	while(keepRunning) {
 
 		// recieve into array
 		uint32_t index;
@@ -80,10 +90,16 @@ int main(int argc, char* argv[])
 		memcpy(&index, &data[0], sizeof(index));
 		memcpy(&time, &data[sizeof(index)], sizeof(time));
 
-		auto dif = now - time;
-		std::cout << index << ": " << time << ", " << now << ", " << dif << std::endl;
+		//auto dif = now - time;
+		//std::cout << index << ": " << time << ", " << now << ", " << dif << std::endl;
+
+		fwrite(&index, sizeof(index), 1, fid);
+		fwrite(&time, sizeof(time), 1, fid);
+		fwrite(&now, sizeof(now), 1, fid);
 
 	}
+	
+	fclose(fid);
 
 	shutdown(sock, SHUT_RDWR);
 	close(sock);
