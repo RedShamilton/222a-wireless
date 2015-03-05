@@ -13,3 +13,4 @@
 * Test what MIMO looks like to 3rd party
 * 64 vs 256 QAM
 * 3/4 vs 5/6 FEC in highcorruption
+* LDPC error?
