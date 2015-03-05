@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 	int yes = 1;
 	setsockopt(sock, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(yes));
 
-	sock_in.sin_addr.s_addr = htonl(INADDR_BROADCAST);
+	sock_in.sin_addr.s_addr = htonl(INADDR_ANY);
 	sock_in.sin_port = htons(atoi(argv[1]));
 	sock_in.sin_family = AF_INET;
 
@@ -72,7 +72,7 @@ int main(int argc, char* argv[])
 
 		uint8_t data[sizeof(index) + sizeof(time)];
 	
-		size_t bytes_recv = recvfrom(sock, data, sizeof(data), 0,
+		int bytes_recv = recvfrom(sock, data, sizeof(data), 0,
 			(struct sockaddr *)&sock_in, &sinlen);
 
 		auto now = hi_res_clock::now().time_since_epoch().count();

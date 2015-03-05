@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
 		memcpy(&data[sizeof(index)], &time, sizeof(time));
 
 		// send array
-		size_t bytes_sent = sendto(sock, &data, sizeof(data), 0,
+		int bytes_sent = sendto(sock, &data, sizeof(data), 0,
 			(struct sockaddr *)&sock_in, sizeof(sock_in)
 		);
 
