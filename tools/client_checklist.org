@@ -1,0 +1,20 @@
+* Before starting
+** Kill network processes
+ - dhclient
+ - network manager
+ - chrome/etc
+** Kill any other antennas
+** Start logging
+ - set adapter to monitor mode (if able
+  - via iwconfig wlanX set Monitor
+  - or airmon-ng start wlanX
+ - start Wireshark
+  - check that promiscuous mode and monitor are set
+ - optionally start time-client
+
+* Starting run
+ - configure iperf_run_client.sh
+ - use iperf_run_client.sh $run_name to run iperf
+ - $run_name doesn't have to be unique, script will handle that case
+* Notes
+ - never delete any part of results/ !
