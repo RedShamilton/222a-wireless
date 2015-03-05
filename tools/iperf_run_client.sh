@@ -7,11 +7,17 @@ size=1G
 server=172.16.0.2
 #set to -R to turn on server sends to client
 reverse=-R
+#default port
+port=5201
 
 ########End Config###########
-if [ $# -eq 0 ]; then
-    echo "Usage $0 run_type(can be non-unique)"
+if [ $# -lt 1  ]; then
+    echo "Usage $0 run_type(can be non-unique) port[if not 5201]"
     exit 1
+fi
+
+if [ $# -eq 2 ]; then
+    port=$2
 fi
 
 mkdir -p results
@@ -31,7 +37,7 @@ else
     echo "You don't have unbuffer, but this is running"
 fi
 
-run="$header $iperf_path -V -n $size -c $server $reverse | tee -a $name"
+run="$header $iperf_path -V -n $size -c $server -p $port $reverse | tee -a $name"
 
 date | tee $name
 echo $run | tee -a $name
