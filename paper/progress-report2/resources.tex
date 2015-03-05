@@ -1,0 +1,43 @@
+\section{Resources}
+
+\subsection{RF Test Equipment}
+
+We have a spectrum analyzer that is capable of monitoring 2.4GHz and
+5GHz WiFi signals allowing us to see all RF traffic in there spectrums
+beyond just WiFi. We are using it to observe active networks and to
+confirm that our testing location have minimal to no RF noise.
+
+We've used this to 'test the waters' in several locations, including
+the CSE building, the basement of the Hopkins parking structure, and
+the gliderport parking lot. The latter two are nearly noise free, so
+we have considered them to be reasonable baseline testing locations.
+
+\subsection{Wireless APs}
+
+We are currently using the latest hardware model of the Linksys
+WRT1900AC 802.11ac WAP, with a 1.2 GHz dual core ARM processor and
+256MB of DDR3 RAM. It is running OpenWRT Chaos Calmer(Dev Branch) with
+various tools, such as iperf3 (see tools) directly on the router for
+testing. The OpenWRT platform gives us complete configuration control
+and insight into what the AP is doing. Most importantly, we have
+confirmed that we can enable/disable beamforming, which will allow us
+to ensure that we are testing its effects.
+
+\subsection{Clients}
+
+We have a number of devices that can act as
+802.11ac clients, including an Apple Macbook Pro, a Microsoft Surface Pro 3,
+and two mobile devices, an Apple iPhone 6+ and an Android OnePlus
+One.
+
+We have also purchased an ASUS USB 801.11ac dongle so that we can
+utilize any other non-ac host as an ac host for testing. We have
+inspected the driver code and options for this device, and have built
+several versions of the driver, disabling some features and adding
+additional logging.
+
+We have addtionally purchased an Intel 7260 chipset based mini PCIe
+card, which is one of the only available chipsets that supports
+monitor mode.
+
+\todo{we should say more here}

@@ -1,0 +1,15 @@
+\section{Tools}
+
+We have decided to use iperf3 with TCP to measure bandwidth and
+characteristics between machines in our network. Our testing has shown
+that running \texttt{iperf3} on the router causes a significant
+performance impact. We have setup several laptops as \texttt{iperf3}
+servers for use during testing. Additionally we've written wrappers
+for iperf to help with automated logging.
+
+We've also built a custom multicast utility for helping us synchronize
+our traces of MU-MIMO tests. We hope to use this to definitively show
+that MU-MIMO is occuring when we claim it is, as well as accounting
+for any clockskew.
+
+\todo{what else}
