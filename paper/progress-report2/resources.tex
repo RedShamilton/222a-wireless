@@ -19,9 +19,9 @@ WRT1900AC 802.11ac WAP, with a 1.2 GHz dual core ARM processor and
 256MB of DDR3 RAM. It is running OpenWRT Chaos Calmer(Dev Branch) with
 various tools, such as iperf3 (see tools) directly on the router for
 testing. The OpenWRT platform gives us complete configuration control
-and insight into what the AP is doing. Most importantly, we have
-confirmed that we can enable/disable beamforming, which will allow us
-to ensure that we are testing its effects.
+and insight into what the AP is doing. We can configure the bandwidth that the 
+802.11ac channels use and specify the data rates that are available, which correlate
+to the MCS numbers that are used.
 
 \subsection{Clients}
 
@@ -30,14 +30,19 @@ We have a number of devices that can act as
 and two mobile devices, an Apple iPhone 6+ and an Android OnePlus
 One.
 
+The MacBook Pro is capable of entering monitor mode and supports the RadioTap
+headers which allows us to log all packets that the laptop sees (including other WAPs)
+and gives vital information such as S/N, channel frequency and bandwidth, data rate (MCS),
+and various other fields.
+
 We have also purchased an ASUS USB 801.11ac dongle so that we can
 utilize any other non-ac host as an ac host for testing. We have
 inspected the driver code and options for this device, and have built
 several versions of the driver, disabling some features and adding
 additional logging.
 
-We have addtionally purchased an Intel 7260 chipset based mini PCIe
+Additionally, we have  purchased an Intel 7260 chipset based mini PCIe
 card, which is one of the only available chipsets that supports
-monitor mode.
+monitor mode with its Linux drivers.
 
 \todo{we should say more here}
