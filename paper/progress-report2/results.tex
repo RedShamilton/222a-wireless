@@ -3,7 +3,13 @@ Well we don't have much here, since we are just getting the new testing running.
 \\
 See figure \ref{fig} for some very brief version of our 80MHz vs
 40MHz testing. This is just the raw times, as we haven't analyzed the
-rest of the capture data yet.
+rest of the capture data yet. We have also ran into some interesting findings
+with the difference in throughput between OS X clients and Linux clients for TCP
+that we currently believe are specific to the OS's TCP implementation. Another issue
+we have ran into with the equipment, we think, is a buffer queuing issue. When we
+perform the iperf tests using UDP we experience a significant amount of lost packets.
+However, we are not entirely sure about this yet because when we throttle the bandwidth down
+to a figure where no dropping should occur, we still observe dropping of 40-50 percent. 
 
 \begin{figure}
 \begin{tabular}{| l || c | c |}
