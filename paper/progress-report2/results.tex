@@ -1,3 +1,21 @@
 \section{Results}
-\todo{Some results here if we have any would be good. Sean?}
-\todo{Future expected results}
+Well we don't have much here, since we are just getting the new testing running.
+\\
+See figure \ref{fig} for some very brief version of our 80MHz vs
+40MHz testing. This is just the raw times, as we haven't analyzed the
+rest of the capture data yet.
+
+\begin{figure}
+\begin{tabular}{| l || c | c |}
+\hline
+Location & 80MHz result & 40MHz result \\\hline
+Office 5ft & 66.31s & 67.27s \\\hline
+Office 15ft & 63.85s & 66.09s \\\hline
+Outside Office 20ft & 64.39s & 62.58s \\\hline
+Outside Office 30ft & 65.58s & 68.81s \\\hline
+Outside Office 3 walls & 74.48s & 88.39s \\\hline
+Outside Office 5 walls & 153.99s & 157.36s \\ \hline
+\end{tabular}
+\caption{Asus AC56 Results indoors, transfer time for 1G iperf TCP data}
+\label{fig}
+\end{figure}
