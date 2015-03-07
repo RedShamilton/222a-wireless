@@ -1,0 +1,45 @@
+* Data Capture Tasks
+
+** Asus [1/4]
+ - [X] 80MHz vs 40MHz Indoor
+ - [ ] 80MHz vs 40MHz Clear
+ - [ ] MCS 8/9 vs 6/7 Indoor
+ - [ ] MCS 8/9 vs 6/7 Clear
+
+** Macbook [0/4]
+ - [ ] 80MHz vs 40MHz Indoor
+ - [ ] 80MHz vs 40MHz Clear
+ - [ ] MCS 8/9 vs 6/7 Indoor
+ - [ ] MCS 8/9 vs 6/7 Clear
+
+** Intel [0/4]
+ - [ ] 80MHz vs 40MHz Indoor
+ - [ ] 80MHz vs 40MHz Clear
+ - [ ] MCS 8/9 vs 6/7 Indoor
+ - [ ] MCS 8/9 vs 6/7 Clear
+
+** MU-MIMO Recv Tests [0/2]
+ - [ ] Macbook - Asus Indoor
+ - [ ] Macbook - Asus Clear
+ - anything else we can
+
+* Data analysis tasks
+ - figure out what else to put here
+
+** Packet capture [0/1]
+ - [ ] Trim all packet captures
+
+** iperf data [0/2]
+ - [ ] Parse out data
+ - [ ] generate avgs and variance
+
+
+* Notes
+** Monitor mode for intel
+ - service network-manager stop
+ - killall wpa_supplicant
+ - use iw to add interface
+  - iw phy del wlan0 (maybe?)
+  - iw phy phy0 interface add mon0 type monitor <flags> (probably want fcsfail and some other stuff)
+  - ifup mon0
+  - now you have a sorta monitor mon0 wifi thing
