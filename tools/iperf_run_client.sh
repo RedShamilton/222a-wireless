@@ -1,8 +1,8 @@
 #!/bin/bash
 # Where is iperf3?
 iperf_path=./iperf3
-#250M files
-size=250M
+#1 gigabyte to send before done
+size=1G
 #Server to connect to
 server=172.16.0.2
 #set to -R to turn on server sends to client
@@ -42,8 +42,3 @@ run="$header $iperf_path -V -n $size -c $server -p $port $reverse | tee -a $name
 date | tee $name
 echo $run | tee -a $name
 eval $run
-eval $run
-eval $run
-eval $run
-mv ram_results/* results/
-sudo umount ram_results
