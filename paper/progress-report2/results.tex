@@ -9,9 +9,9 @@ that we currently believe are specific to the OS's TCP implementation. Another i
 we have ran into with the equipment, we think, is a buffer queuing issue. When we
 perform the iperf tests using UDP we experience a significant amount of lost packets.
 However, we are not entirely sure about this yet because when we throttle the bandwidth down
-to a figure where no dropping should occur, we still observe dropping of 40-50 percent. 
+to a figure where no dropping should occur, we still observe dropping of 40-50 percent.
 
-\begin{figure}
+\begin{figure}[h!]
 \begin{tabular}{| l || c | c |}
 \hline
 Location & 80MHz result & 40MHz result \\\hline
@@ -25,3 +25,4 @@ Outside Office 5 walls & 153.99s & 157.36s \\ \hline
 \caption{Asus AC56 Results indoors, transfer time for 1G iperf TCP data}
 \label{fig}
 \end{figure}
+\pagebreak
