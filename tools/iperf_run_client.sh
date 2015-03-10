@@ -1,6 +1,6 @@
 #!/bin/bash
-# Where is iperf3?
-iperf_path=./iperf3
+# Where is iperf2?
+iperf_path=./iperf
 #250M files
 size=250M
 #Server to connect to
@@ -22,6 +22,10 @@ fi
 
 mkdir -p results
 
+mkdir -p ram_results
+
+sudo mount -t tmpfs -o size=512M tmpfs ram_results/
+
 name=results/$1
 i=1
 if [[ -e $name.$i ]] ; then
@@ -37,7 +41,9 @@ else
     echo "You don't have unbuffer, but this is running"
 fi
 
-run="$header $iperf_path -V -n $size -c $server -p $port $reverse | tee -a $name"
+name=ram_$name
+
+run="$header $iperf_path -i1 -n $size -c $server -p $port $reverse | tee -a $name"
 
 date | tee $name
 echo $run | tee -a $name
