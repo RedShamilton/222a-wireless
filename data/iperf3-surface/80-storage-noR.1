@@ -1,0 +1,142 @@
+Sat Mar  7 13:46:55 PST 2015
+/home/jakem/tmp/iperf3 -V -n 250M -c 192.168.5.60 -p 5201 | tee -a results/80-storage-noR.1
+iperf 3.0.11
+Linux akira 3.2.0-4-amd64 #1 SMP Debian 3.2.60-1+deb7u3 x86_64 GNU/Linux
+Time: Sat, 07 Mar 2015 21:46:55 GMT
+Connecting to host 192.168.5.60, port 5201
+      Cookie: akira.1425764815.593987.062e81b14d07
+      TCP MSS: 1460 (default)
+[  4] local 10.0.2.15 port 41738 connected to 192.168.5.60 port 5201
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 262144000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  14.4 MBytes   120 Mbits/sec    0   94.1 KBytes       
+[  4]   1.00-2.00   sec  14.6 MBytes   123 Mbits/sec    1   88.4 KBytes       
+[  4]   2.00-3.00   sec  17.3 MBytes   146 Mbits/sec    0   94.1 KBytes       
+[  4]   3.00-4.00   sec  14.6 MBytes   122 Mbits/sec    0   94.1 KBytes       
+[  4]   4.00-5.00   sec  15.4 MBytes   130 Mbits/sec    0   94.1 KBytes       
+[  4]   5.00-6.00   sec  16.7 MBytes   140 Mbits/sec    0   94.1 KBytes       
+[  4]   6.00-7.00   sec  16.4 MBytes   138 Mbits/sec    0   95.5 KBytes       
+[  4]   7.00-8.00   sec  13.4 MBytes   113 Mbits/sec    1   87.0 KBytes       
+[  4]   8.00-9.00   sec  15.5 MBytes   130 Mbits/sec    0   94.1 KBytes       
+[  4]   9.00-10.00  sec  14.0 MBytes   118 Mbits/sec    0   94.1 KBytes       
+[  4]  10.00-11.00  sec  15.9 MBytes   134 Mbits/sec    1   92.7 KBytes       
+[  4]  11.00-12.00  sec  17.0 MBytes   142 Mbits/sec    0   94.1 KBytes       
+[  4]  12.00-13.00  sec  12.3 MBytes   103 Mbits/sec    2   81.3 KBytes       
+[  4]  13.00-14.00  sec  13.2 MBytes   111 Mbits/sec    1   87.0 KBytes       
+[  4]  14.00-15.00  sec  15.8 MBytes   132 Mbits/sec    0   94.1 KBytes       
+[  4]  15.00-16.00  sec  15.9 MBytes   134 Mbits/sec    0   94.1 KBytes       
+[  4]  16.00-16.66  sec  7.64 MBytes  97.9 Mbits/sec    1   69.9 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-16.66  sec   250 MBytes   126 Mbits/sec    7             sender
+[  4]   0.00-16.66  sec   250 MBytes   126 Mbits/sec                  receiver
+CPU Utilization: local/sender 6.4% (0.1%u/6.3%s), remote/receiver 2.7% (0.3%u/2.4%s)
+
+iperf Done.
+iperf 3.0.11
+Linux akira 3.2.0-4-amd64 #1 SMP Debian 3.2.60-1+deb7u3 x86_64 GNU/Linux
+Time: Sat, 07 Mar 2015 21:47:12 GMT
+Connecting to host 192.168.5.60, port 5201
+      Cookie: akira.1425764832.615211.38785fa56f2f
+      TCP MSS: 1460 (default)
+[  4] local 10.0.2.15 port 41740 connected to 192.168.5.60 port 5201
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 262144000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  16.5 MBytes   138 Mbits/sec    0   94.1 KBytes       
+[  4]   1.00-2.00   sec  13.4 MBytes   113 Mbits/sec    1   85.5 KBytes       
+[  4]   2.00-3.00   sec  15.9 MBytes   133 Mbits/sec    0   94.1 KBytes       
+[  4]   3.00-4.00   sec  15.4 MBytes   129 Mbits/sec    0   94.1 KBytes       
+[  4]   4.00-5.00   sec  16.0 MBytes   134 Mbits/sec    0   94.1 KBytes       
+[  4]   5.00-6.00   sec  11.9 MBytes  99.6 Mbits/sec    1   78.4 KBytes       
+[  4]   6.00-7.00   sec  14.3 MBytes   120 Mbits/sec    0   94.1 KBytes       
+[  4]   7.00-8.00   sec  16.9 MBytes   142 Mbits/sec    0   94.1 KBytes       
+[  4]   8.00-9.00   sec  12.8 MBytes   108 Mbits/sec    0   94.1 KBytes       
+[  4]   9.00-10.00  sec  13.6 MBytes   114 Mbits/sec    1   89.8 KBytes       
+[  4]  10.00-11.00  sec  16.3 MBytes   137 Mbits/sec    0   94.1 KBytes       
+[  4]  11.00-12.00  sec  14.4 MBytes   121 Mbits/sec    0   94.1 KBytes       
+[  4]  12.00-13.00  sec  13.0 MBytes   109 Mbits/sec    1   89.8 KBytes       
+[  4]  13.00-14.00  sec  15.4 MBytes   129 Mbits/sec    0   94.1 KBytes       
+[  4]  14.00-15.00  sec  15.6 MBytes   131 Mbits/sec    0   94.1 KBytes       
+[  4]  15.00-16.00  sec  16.7 MBytes   140 Mbits/sec    0   94.1 KBytes       
+[  4]  16.00-16.74  sec  12.0 MBytes   137 Mbits/sec    0   94.1 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-16.74  sec   250 MBytes   125 Mbits/sec    4             sender
+[  4]   0.00-16.74  sec   249 MBytes   125 Mbits/sec                  receiver
+CPU Utilization: local/sender 7.1% (0.2%u/6.8%s), remote/receiver 20.7% (2.0%u/18.7%s)
+
+iperf Done.
+iperf 3.0.11
+Linux akira 3.2.0-4-amd64 #1 SMP Debian 3.2.60-1+deb7u3 x86_64 GNU/Linux
+Time: Sat, 07 Mar 2015 21:47:29 GMT
+Connecting to host 192.168.5.60, port 5201
+      Cookie: akira.1425764849.710635.1b2cdd3e326e
+      TCP MSS: 1460 (default)
+[  4] local 10.0.2.15 port 41742 connected to 192.168.5.60 port 5201
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 262144000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  10.3 MBytes  86.1 Mbits/sec    2   69.9 KBytes       
+[  4]   1.00-2.00   sec  15.8 MBytes   132 Mbits/sec    0   92.7 KBytes       
+[  4]   2.00-3.00   sec  13.4 MBytes   113 Mbits/sec    1   89.8 KBytes       
+[  4]   3.00-4.00   sec  14.9 MBytes   125 Mbits/sec    0   94.1 KBytes       
+[  4]   4.00-5.00   sec  14.5 MBytes   122 Mbits/sec    1   91.2 KBytes       
+[  4]   5.00-6.00   sec  13.0 MBytes   109 Mbits/sec    0   94.1 KBytes       
+[  4]   6.00-7.00   sec  14.9 MBytes   125 Mbits/sec    0   94.1 KBytes       
+[  4]   7.00-8.01   sec  9.17 MBytes  76.2 Mbits/sec    2   58.5 KBytes       
+[  4]   8.01-9.00   sec  17.3 MBytes   146 Mbits/sec    0   92.7 KBytes       
+[  4]   9.00-10.00  sec  16.5 MBytes   138 Mbits/sec    0   94.1 KBytes       
+[  4]  10.00-11.00  sec  14.6 MBytes   122 Mbits/sec    0   94.1 KBytes       
+[  4]  11.00-12.00  sec  14.1 MBytes   118 Mbits/sec    0   94.1 KBytes       
+[  4]  12.00-13.00  sec  11.4 MBytes  95.9 Mbits/sec    1   72.7 KBytes       
+[  4]  13.00-14.00  sec  16.5 MBytes   139 Mbits/sec    0   94.1 KBytes       
+[  4]  14.00-15.00  sec  14.2 MBytes   119 Mbits/sec    0   94.1 KBytes       
+[  4]  15.00-16.00  sec  9.35 MBytes  78.5 Mbits/sec    0   94.1 KBytes       
+[  4]  16.00-17.00  sec  5.56 MBytes  46.6 Mbits/sec    0   94.1 KBytes       
+[  4]  17.00-18.00  sec  6.24 MBytes  52.4 Mbits/sec    0   94.1 KBytes       
+[  4]  18.00-19.00  sec  5.54 MBytes  46.5 Mbits/sec    1   68.4 KBytes       
+[  4]  19.00-20.00  sec  11.1 MBytes  92.9 Mbits/sec    0   91.2 KBytes       
+[  4]  20.00-20.10  sec  1.69 MBytes   136 Mbits/sec    1   68.4 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-20.10  sec   250 MBytes   104 Mbits/sec    9             sender
+[  4]   0.00-20.10  sec   249 MBytes   104 Mbits/sec                  receiver
+CPU Utilization: local/sender 6.5% (0.1%u/6.4%s), remote/receiver 18.0% (2.1%u/15.9%s)
+
+iperf Done.
+iperf 3.0.11
+Linux akira 3.2.0-4-amd64 #1 SMP Debian 3.2.60-1+deb7u3 x86_64 GNU/Linux
+Time: Sat, 07 Mar 2015 21:47:50 GMT
+Connecting to host 192.168.5.60, port 5201
+      Cookie: akira.1425764870.134391.6b26961505a9
+      TCP MSS: 1460 (default)
+[  4] local 10.0.2.15 port 41744 connected to 192.168.5.60 port 5201
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 262144000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  4]   0.00-1.00   sec  15.9 MBytes   133 Mbits/sec    0   94.1 KBytes       
+[  4]   1.00-2.00   sec  14.4 MBytes   121 Mbits/sec    0   94.1 KBytes       
+[  4]   2.00-3.00   sec  13.0 MBytes   109 Mbits/sec    1   89.8 KBytes       
+[  4]   3.00-4.00   sec  14.7 MBytes   124 Mbits/sec    0   94.1 KBytes       
+[  4]   4.00-5.00   sec  14.0 MBytes   117 Mbits/sec    1   91.2 KBytes       
+[  4]   5.00-6.00   sec  15.2 MBytes   128 Mbits/sec    0   94.1 KBytes       
+[  4]   6.00-7.00   sec  14.2 MBytes   119 Mbits/sec    0   94.1 KBytes       
+[  4]   7.00-8.00   sec  17.3 MBytes   145 Mbits/sec    0   94.1 KBytes       
+[  4]   8.00-9.00   sec  16.2 MBytes   136 Mbits/sec    0   94.1 KBytes       
+[  4]   9.00-10.00  sec  16.0 MBytes   134 Mbits/sec    0   95.5 KBytes       
+[  4]  10.00-11.00  sec  16.7 MBytes   140 Mbits/sec    0   95.5 KBytes       
+[  4]  11.00-12.00  sec  15.8 MBytes   132 Mbits/sec    0   97.0 KBytes       
+[  4]  12.00-13.00  sec  15.5 MBytes   130 Mbits/sec    0   97.0 KBytes       
+[  4]  13.00-14.00  sec  12.3 MBytes   103 Mbits/sec    1   89.8 KBytes       
+[  4]  14.00-15.00  sec  14.6 MBytes   122 Mbits/sec    0   94.1 KBytes       
+[  4]  15.00-16.00  sec  16.8 MBytes   141 Mbits/sec    0   94.1 KBytes       
+[  4]  16.00-16.84  sec  7.79 MBytes  77.5 Mbits/sec    2   67.0 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  4]   0.00-16.84  sec   250 MBytes   125 Mbits/sec    5             sender
+[  4]   0.00-16.84  sec   250 MBytes   124 Mbits/sec                  receiver
+CPU Utilization: local/sender 6.4% (0.2%u/6.1%s), remote/receiver 20.9% (2.7%u/18.2%s)
+
+iperf Done.
