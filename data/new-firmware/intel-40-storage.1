@@ -1,0 +1,145 @@
+Fri Mar 13 16:40:31 PDT 2015
+unbuffer iperf -i1 -n 250M -c 192.168.1.42 -p 5001 | tee -a ram_results/intel-40-storage.1
+------------------------------------------------------------
+Client connecting to 192.168.1.42, TCP port 5001
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49246 connected with 192.168.1.42 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  7.25 MBytes  60.8 Mbits/sec
+[  7]  1.0- 2.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7]  2.0- 3.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7]  3.0- 4.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7]  4.0- 5.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7]  5.0- 6.0 sec  7.25 MBytes  60.8 Mbits/sec
+[  7]  6.0- 7.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7]  7.0- 8.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7]  8.0- 9.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7]  9.0-10.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7] 10.0-11.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 11.0-12.0 sec  6.88 MBytes  57.7 Mbits/sec
+[  7] 12.0-13.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 13.0-14.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 14.0-15.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7] 15.0-16.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 16.0-17.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 17.0-18.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 18.0-19.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 19.0-20.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 20.0-21.0 sec  10.0 MBytes  83.9 Mbits/sec
+[  7] 21.0-22.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 22.0-23.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 23.0-24.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7] 24.0-25.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7] 25.0-26.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 26.0-27.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 27.0-28.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 28.0-29.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7]  0.0-29.8 sec   250 MBytes  70.5 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.42, TCP port 5001
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49262 connected with 192.168.1.42 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7]  1.0- 2.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  2.0- 3.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7]  3.0- 4.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7]  4.0- 5.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7]  5.0- 6.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7]  6.0- 7.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7]  7.0- 8.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  8.0- 9.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7]  9.0-10.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 10.0-11.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7] 11.0-12.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 12.0-13.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 13.0-14.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 14.0-15.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 15.0-16.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 16.0-17.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 17.0-18.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 18.0-19.0 sec  8.00 MBytes  67.1 Mbits/sec
+[  7] 19.0-20.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 20.0-21.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 21.0-22.0 sec  6.75 MBytes  56.6 Mbits/sec
+[  7] 22.0-23.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 23.0-24.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 24.0-25.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 25.0-26.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 26.0-27.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 27.0-28.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 28.0-29.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7]  0.0-29.2 sec   250 MBytes  71.7 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.42, TCP port 5001
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49277 connected with 192.168.1.42 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7]  1.0- 2.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7]  2.0- 3.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7]  3.0- 4.0 sec  9.62 MBytes  80.7 Mbits/sec
+[  7]  4.0- 5.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7]  5.0- 6.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7]  6.0- 7.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7]  7.0- 8.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  8.0- 9.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7]  9.0-10.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7] 10.0-11.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 11.0-12.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 12.0-13.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 13.0-14.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 14.0-15.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7] 15.0-16.0 sec  7.25 MBytes  60.8 Mbits/sec
+[  7] 16.0-17.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7] 17.0-18.0 sec  7.25 MBytes  60.8 Mbits/sec
+[  7] 18.0-19.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 19.0-20.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 20.0-21.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 21.0-22.0 sec  8.00 MBytes  67.1 Mbits/sec
+[  7] 22.0-23.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 23.0-24.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 24.0-25.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 25.0-26.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 26.0-27.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7] 27.0-28.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 28.0-29.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7]  0.0-29.7 sec   250 MBytes  70.6 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.42, TCP port 5001
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49293 connected with 192.168.1.42 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7]  1.0- 2.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7]  2.0- 3.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7]  3.0- 4.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  4.0- 5.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7]  5.0- 6.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7]  6.0- 7.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7]  7.0- 8.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  8.0- 9.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7]  9.0-10.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 10.0-11.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 11.0-12.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 12.0-13.0 sec  7.12 MBytes  59.8 Mbits/sec
+[  7] 13.0-14.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7] 14.0-15.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 15.0-16.0 sec  9.62 MBytes  80.7 Mbits/sec
+[  7] 16.0-17.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7] 17.0-18.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 18.0-19.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7] 19.0-20.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7] 20.0-21.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 21.0-22.0 sec  8.88 MBytes  74.4 Mbits/sec
+[  7] 22.0-23.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 23.0-24.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 24.0-25.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 25.0-26.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7] 26.0-27.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 27.0-28.0 sec  8.00 MBytes  67.1 Mbits/sec
+[  7]  0.0-28.7 sec   250 MBytes  72.9 Mbits/sec

@@ -1,0 +1,157 @@
+Fri Mar 13 16:48:20 PDT 2015
+unbuffer iperf -i1 -n 250M -c 192.168.1.224 -p 5201 | tee -a ram_results/mac-40-storage.1
+------------------------------------------------------------
+Client connecting to 192.168.1.224, TCP port 5201
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49607 connected with 192.168.1.224 port 5201
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7]  1.0- 2.0 sec  6.38 MBytes  53.5 Mbits/sec
+[  7]  2.0- 3.0 sec  5.88 MBytes  49.3 Mbits/sec
+[  7]  3.0- 4.0 sec  6.12 MBytes  51.4 Mbits/sec
+[  7]  4.0- 5.0 sec  7.00 MBytes  58.7 Mbits/sec
+[  7]  5.0- 6.0 sec  6.12 MBytes  51.4 Mbits/sec
+[  7]  6.0- 7.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7]  7.0- 8.0 sec  6.25 MBytes  52.4 Mbits/sec
+[  7]  8.0- 9.0 sec  6.62 MBytes  55.6 Mbits/sec
+[  7]  9.0-10.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7] 10.0-11.0 sec  6.62 MBytes  55.6 Mbits/sec
+[  7] 11.0-12.0 sec  6.88 MBytes  57.7 Mbits/sec
+[  7] 12.0-13.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7] 13.0-14.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 14.0-15.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 15.0-16.0 sec  5.75 MBytes  48.2 Mbits/sec
+[  7] 16.0-17.0 sec  3.75 MBytes  31.5 Mbits/sec
+[  7] 17.0-18.0 sec  2.75 MBytes  23.1 Mbits/sec
+[  7] 18.0-19.0 sec  10.9 MBytes  91.2 Mbits/sec
+[  7] 19.0-20.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 20.0-21.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7] 21.0-22.0 sec  10.5 MBytes  88.1 Mbits/sec
+[  7] 22.0-23.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 23.0-24.0 sec  2.12 MBytes  17.8 Mbits/sec
+[  7] 24.0-25.0 sec  8.12 MBytes  68.2 Mbits/sec
+[  7] 25.0-26.0 sec  2.50 MBytes  21.0 Mbits/sec
+[  7] 26.0-27.0 sec  11.4 MBytes  95.4 Mbits/sec
+[  7] 27.0-28.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 28.0-29.0 sec  10.9 MBytes  91.2 Mbits/sec
+[  7] 29.0-30.0 sec  11.0 MBytes  92.3 Mbits/sec
+[  7] 30.0-31.0 sec  12.8 MBytes   107 Mbits/sec
+[  7] 31.0-32.0 sec  11.9 MBytes  99.6 Mbits/sec
+[  7]  0.0-32.5 sec   250 MBytes  64.5 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.224, TCP port 5201
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49640 connected with 192.168.1.224 port 5201
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  12.1 MBytes   102 Mbits/sec
+[  7]  1.0- 2.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7]  2.0- 3.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7]  3.0- 4.0 sec  6.50 MBytes  54.5 Mbits/sec
+[  7]  4.0- 5.0 sec  4.75 MBytes  39.8 Mbits/sec
+[  7]  5.0- 6.0 sec  6.50 MBytes  54.5 Mbits/sec
+[  7]  6.0- 7.0 sec  7.25 MBytes  60.8 Mbits/sec
+[  7]  7.0- 8.0 sec  10.1 MBytes  84.9 Mbits/sec
+[  7]  8.0- 9.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7]  9.0-10.0 sec  5.25 MBytes  44.0 Mbits/sec
+[  7] 10.0-11.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7] 11.0-12.0 sec  5.00 MBytes  41.9 Mbits/sec
+[  7] 12.0-13.0 sec  7.00 MBytes  58.7 Mbits/sec
+[  7] 13.0-14.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7] 14.0-15.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 15.0-16.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 16.0-17.0 sec  10.0 MBytes  83.9 Mbits/sec
+[  7] 17.0-18.0 sec  10.6 MBytes  89.1 Mbits/sec
+[  7] 18.0-19.0 sec  7.38 MBytes  61.9 Mbits/sec
+[  7] 19.0-20.0 sec  8.25 MBytes  69.2 Mbits/sec
+[  7] 20.0-21.0 sec  10.2 MBytes  86.0 Mbits/sec
+[  7] 21.0-22.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7] 22.0-23.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7] 23.0-24.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 24.0-25.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 25.0-26.0 sec  3.00 MBytes  25.2 Mbits/sec
+[  7] 26.0-27.0 sec  4.38 MBytes  36.7 Mbits/sec
+[  7] 27.0-28.0 sec  7.12 MBytes  59.8 Mbits/sec
+[  7] 28.0-29.0 sec  6.75 MBytes  56.6 Mbits/sec
+[  7] 29.0-30.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 30.0-31.0 sec  4.62 MBytes  38.8 Mbits/sec
+[  7] 31.0-32.0 sec  5.75 MBytes  48.2 Mbits/sec
+[  7] 32.0-33.0 sec  5.50 MBytes  46.1 Mbits/sec
+[  7] 33.0-34.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7] 34.0-35.0 sec  6.75 MBytes  56.6 Mbits/sec
+[  7]  0.0-35.1 sec   250 MBytes  59.8 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.224, TCP port 5201
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49642 connected with 192.168.1.224 port 5201
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7]  1.0- 2.0 sec  3.75 MBytes  31.5 Mbits/sec
+[  7]  2.0- 3.0 sec  4.75 MBytes  39.8 Mbits/sec
+[  7]  3.0- 4.0 sec  6.50 MBytes  54.5 Mbits/sec
+[  7]  4.0- 5.0 sec  6.25 MBytes  52.4 Mbits/sec
+[  7]  5.0- 6.0 sec  5.88 MBytes  49.3 Mbits/sec
+[  7]  6.0- 7.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7]  7.0- 8.0 sec  6.25 MBytes  52.4 Mbits/sec
+[  7]  8.0- 9.0 sec  7.38 MBytes  61.9 Mbits/sec
+[  7]  9.0-10.0 sec  8.38 MBytes  70.3 Mbits/sec
+[  7] 10.0-11.0 sec  7.75 MBytes  65.0 Mbits/sec
+[  7] 11.0-12.0 sec  6.25 MBytes  52.4 Mbits/sec
+[  7] 12.0-13.0 sec  5.88 MBytes  49.3 Mbits/sec
+[  7] 13.0-14.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 14.0-15.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 15.0-16.0 sec  2.12 MBytes  17.8 Mbits/sec
+[  7] 16.0-17.0 sec  5.88 MBytes  49.3 Mbits/sec
+[  7] 17.0-18.0 sec  4.38 MBytes  36.7 Mbits/sec
+[  7] 18.0-19.0 sec  7.88 MBytes  66.1 Mbits/sec
+[  7] 19.0-20.0 sec  9.38 MBytes  78.6 Mbits/sec
+[  7] 20.0-21.0 sec  6.88 MBytes  57.7 Mbits/sec
+[  7] 21.0-22.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7] 22.0-23.0 sec  7.62 MBytes  64.0 Mbits/sec
+[  7] 23.0-24.0 sec  8.62 MBytes  72.4 Mbits/sec
+[  7] 24.0-25.0 sec  9.88 MBytes  82.8 Mbits/sec
+[  7] 25.0-26.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7] 26.0-27.0 sec  2.50 MBytes  21.0 Mbits/sec
+[  7] 27.0-28.0 sec  3.50 MBytes  29.4 Mbits/sec
+[  7] 28.0-29.0 sec  9.88 MBytes  82.8 Mbits/sec
+[  7] 29.0-30.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7] 30.0-31.0 sec  10.1 MBytes  84.9 Mbits/sec
+[  7] 31.0-32.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7] 32.0-33.0 sec  9.88 MBytes  82.8 Mbits/sec
+[  7] 33.0-34.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7] 34.0-35.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7]  0.0-35.2 sec   250 MBytes  59.6 Mbits/sec
+------------------------------------------------------------
+Client connecting to 192.168.1.224, TCP port 5201
+TCP window size:  129 KByte (default)
+------------------------------------------------------------
+[  7] local 192.168.1.199 port 49643 connected with 192.168.1.224 port 5201
+[ ID] Interval       Transfer     Bandwidth
+[  7]  0.0- 1.0 sec  10.1 MBytes  84.9 Mbits/sec
+[  7]  1.0- 2.0 sec  9.25 MBytes  77.6 Mbits/sec
+[  7]  2.0- 3.0 sec  11.0 MBytes  92.3 Mbits/sec
+[  7]  3.0- 4.0 sec  9.62 MBytes  80.7 Mbits/sec
+[  7]  4.0- 5.0 sec  9.88 MBytes  82.8 Mbits/sec
+[  7]  5.0- 6.0 sec  10.2 MBytes  86.0 Mbits/sec
+[  7]  6.0- 7.0 sec  9.75 MBytes  81.8 Mbits/sec
+[  7]  7.0- 8.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7]  8.0- 9.0 sec  8.00 MBytes  67.1 Mbits/sec
+[  7]  9.0-10.0 sec  8.50 MBytes  71.3 Mbits/sec
+[  7] 10.0-11.0 sec  7.50 MBytes  62.9 Mbits/sec
+[  7] 11.0-12.0 sec  9.50 MBytes  79.7 Mbits/sec
+[  7] 12.0-13.0 sec  8.75 MBytes  73.4 Mbits/sec
+[  7] 13.0-14.0 sec  10.6 MBytes  89.1 Mbits/sec
+[  7] 14.0-15.0 sec  11.4 MBytes  95.4 Mbits/sec
+[  7] 15.0-16.0 sec  10.4 MBytes  87.0 Mbits/sec
+[  7] 16.0-17.0 sec  12.0 MBytes   101 Mbits/sec
+[  7] 17.0-18.0 sec  11.9 MBytes  99.6 Mbits/sec
+[  7] 18.0-19.0 sec  11.0 MBytes  92.3 Mbits/sec
+[  7] 19.0-20.0 sec  11.2 MBytes  94.4 Mbits/sec
+[  7] 20.0-21.0 sec  9.12 MBytes  76.5 Mbits/sec
+[  7] 21.0-22.0 sec  10.9 MBytes  91.2 Mbits/sec
+[  7] 22.0-23.0 sec  9.88 MBytes  82.8 Mbits/sec
+[  7] 23.0-24.0 sec  10.1 MBytes  84.9 Mbits/sec
+[  7] 24.0-25.0 sec  9.00 MBytes  75.5 Mbits/sec
+[  7]  0.0-25.3 sec   250 MBytes  82.9 Mbits/sec
