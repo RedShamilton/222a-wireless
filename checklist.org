@@ -1,33 +1,31 @@
 * Data Capture Tasks
 
-** Asus [1/4]
+** Surface [1/2]
  - [X] 80MHz vs 40MHz Indoor
  - [ ] 80MHz vs 40MHz Clear
- - [ ] MCS 8/9 vs 6/7 Indoor
- - [ ] MCS 8/9 vs 6/7 Clear
 
-** Macbook [0/4]
- - [ ] 80MHz vs 40MHz Indoor
+** Macbook [2/3]
+ - [X] 80MHz vs 40MHz Indoor
  - [ ] 80MHz vs 40MHz Clear
- - [ ] MCS 8/9 vs 6/7 Indoor
- - [ ] MCS 8/9 vs 6/7 Clear
+ - [X] solo indoor capture
 
-** Intel [0/4]
- - [ ] 80MHz vs 40MHz Indoor
+** Intel [1/4]
+ - [X] 80MHz vs 40MHz Indoor
  - [ ] 80MHz vs 40MHz Clear
- - [ ] MCS 8/9 vs 6/7 Indoor
- - [ ] MCS 8/9 vs 6/7 Clear
-
-** MU-MIMO Recv Tests [0/2]
- - [ ] Macbook - Asus Indoor
- - [ ] Macbook - Asus Clear
- - anything else we can
+ - [ ] MCS 8/9 vs 6/7 Indoor if possible
+ - [ ] MCS 8/9 vs 6/7 Clear if possible
 
 * Data analysis tasks
- - figure out what else to put here
+** 80 vs 40 thru walls (storage) [0/1]
+ - [ ] check on dbm
+ - [ ] figure out whats going on?
 
-** Packet capture [0/1]
- - [ ] Trim all packet captures
+** graph dbm at indoor locations 80vs40 [1/5]
+ - [X] pull out dbm for intel
+ - [ ] pull out dbm for macbook
+ - [ ] pull out dbm for surface
+ - [ ] write script to generate avg and error bars
+ - [ ] make graphs
 
 ** iperf data [0/2]
  - [ ] Parse out data
