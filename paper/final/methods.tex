@@ -1,2 +1,87 @@
 \section{Methodology}
-\todo{describe how we did testing}
+
+We tested various devices against our 802.11ac WAP in both clear and RF-noisy
+environments. We originally planned to measure the differences between several
+different MCSs, on both 80MHz and 40MHz, and the effects of MU-MIMO and
+beamforming on a connection. Unfortunately, due to hardware limitations, we were
+only able to test 80 MHz vs 40MHz, and monitor some beamforming and MCS activity
+without influencing or selecting it.
+
+\subsection{Devices}
+
+\paragraph{RF Test Equipment}
+
+We used a spectrum analyzer that is capable of monitoring 2.4GHz and 5GHz WiFi
+signals allowing us to see all RF traffic in there spectrums beyond just WiFi.
+We used it to observe active networks and to confirm that our clear testing
+location had minimal to no RF noise.
+
+\paragraph{Wireless APs}
+
+Our WAP was the latest hardware model of the Linksys WRT1900AC 802.11ac,
+with a 1.2 GHz dual core ARM processor and 256MB of DDR3 RAM. We originally
+installed OpenWRT Chaos Calmer (Dev Branch) on the AP, because we believed it
+would give us complete configuration control and insight into what the AP is
+doing. Unfortunately, after many tests, we determined that bugs or
+inefficiencies in the OpenWRT firmware were causing issues with our throughput
+numbers, and we restored the original Linksys stock firmware to the device.
+After doing so, our results returned to the expected levels for throughput.
+
+\paragraph{Clients}
+
+We used a number of devices as 802.11ac clients, including an Apple Macbook Pro,
+a Microsoft Surface Pro 3, and a Lenovo \todo{???} with a Intel \todo{???} PCIe
+802.11ac capable wifi card installed.
+
+We also purchased an ASUS USB 801.11ac dongle so that we could
+utilize any other non-ac host as an ac host for testing. However after a small
+number of tests, the ASUS dongle failed.
+
+\subsection{Testing}
+
+\paragraph{Setup}
+To run our tests, we connected one computer via ethernet cable to the AP, and
+then connected the device we were testing over 802.11ac wireless. We would then
+run an iperf version 2 \todo{more specific} server on the wireless client, and
+an iperf client on the hardwired device. This way the flow of data over wifi
+would be from the router to the wireless client. For a majority of our tests, we
+did four transfers of 250MB, though for some tests, we did one transfer lasting
+100 seconds. For a majority of tests, we captured packets either on the device
+doing the transfer itself, or on a nearby device using monitor mode.
+
+\paragraph{Locations}
+We wanted to perform our tests in both RF-clear and RF-noisy environments. For
+the noisy environment, we used our offices in the CSE building, which are
+surrounding by 802.11b/g/n/ac APs and devices. For the clear environment, we
+performed initial promising tests in the basement level of the Hopkins parking
+structure, however we were concerned that the low concrete beams in the ceiling
+could be inadvertently effecting our results. We then moved out to the parking
+lot behind the Torrey Pines glider port. Here we had a wide open space with no
+RF-interference according to our spectrum analyzer.
+
+
+\paragraph{Indoor}
+In the office, we set the WAP at a fixed point, and then measured out 5, 10 and
+15ft increments from the device for initial tests. We then moved our clients out
+into the hallway, so the signal had to travel through a single wall. Into the
+kitchen, so the signal had to travel through two walls, and then on the other
+side of the building, so the signal had to travel through several walls and
+devices. We tested each of our devices with the WAP set to both 80MHz and 40MHz.
+However, we were unable to force the WAP or any of the clients to stick to a
+single MCS, and we were unable to disable or influence beamforming on any of the
+clients.
+
+\paragraph{Clear}
+Out at the glider port, we measured out several different distances from the
+router and ran tests from there. Because of the size of the parking lot, we were
+able to run tests much further away from the router here than in the office.
+
+\paragraph{ \todo{title this better} Things we measured }
+We tested each of our devices with the WAP set to both 80MHz and 40MHz.
+However, we were unable to force the WAP or any of the clients to stick to a
+single MCS, and we were unable to disable or influence beamforming on any of the
+clients...
+
+\todo{ not done yet }
+
+
