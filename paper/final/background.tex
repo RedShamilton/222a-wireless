@@ -1,3 +1,40 @@
 \section{background}
-\todo{a background}
-\todo{related works}
+
+Today we see the now ubiquitous WiFi networks in almost every setting where computers are used from home and businesses to public WiFi hotspots. This trend has grown over the years as mobile devices such as smart phones require high-speed network access and laptops are frequently reducing their port count eliminating wired network options.
+
+The IEEE 802.11 standard for wireless Ethernet has evolved over the years to keep pace with these ever increasing demand for higher throughput wireless network connectivity.
+
+\subsection{Previous Standards}
+
+There were four widely used versions of 802.11 before ac; b, g, a, and n. The first widely used version, b, was introduced in September 1999 and is still seen in use today in many lower-end devices. This version operated in the 2.4GHz spectrum and made use of eleven 22MHz channels in the US and fourteen in some countries. The b standard uses Direct-Sequence Spread Spectrum (DSSS) as the only modulation scheme dropping the Frequency-Hopping Spread Spectrum (FHSS) that was used in legacy versions of 802.11 prior to the release of b. At the same time that b was released the a standard was also released placing DSSS with Orthogonal Frequency Division Multiplexing (OFMD) as the modulation scheme and changing from 22MHz to 20MHz bandwidth channels in the 5GHz spectrum. This allowed for data rates of up to 54Mbps. The next standard, g, brought the modulation schemes and 20MHz channel bandwidth over from the a standard to the 2.4GHz spectrum while maintaining backwards compatibility by support modulation and channel bandwidths of b. 
+
+The next standard, n, which ac builds upon and simplifies further, aims to consolidate technologies used on both 2.4GHz and 5GHz while obsoleting outdated parts of the standard while introducing a few new capabilities that worked on both spectrums to increase throughput and efficiency. The n standard removes backwards compatibility from a,b and g standards although the reality is most hardware still implements these standards for maximum compatibility. Noticeably missing is DSSS The standard adds three main capabilities to the 802.11 standard; Multi-Input Multi-Output (MIMO) and 40 MHz bandwidth channels to the phy layer and frame aggregation to the MAC layer. 
+
+\begin{table*}[b]
+\caption{Summary of IEEE 802.11 Capabilities}
+\begin{center}
+\begin{tabular}{c | c | c | c | p{1.3cm} | c}
+\textbf{revision} & \textbf{release data} & \textbf{spectrum (GHz)} & \textbf{bandwidth (MHz)} & \textbf{modulation} & \textbf{spatial streams} \\
+\hline\hline
+a & 9/1999 & 5 & 20 & OFDM & N/A \\ \hline
+b & 9/1999 & 2.4 & 22 & CCK\newline DSSS & N/A \\ \hline
+g & 6/2003 & 2.4 & 20 & CCK\newline OFDM\newline DSSS & N/A \\ \hline
+n & 10/2009 & 2.4/5 & 20/40 & OFDM & 4 \\ \hline
+ac & 12/2013 & 5 & 20/40/80/160 & OFDM & 8 \\ \hline
+\end{tabular}
+\end{center}
+\label{table:80211caps}
+\end{table*}
+
+\subsection{IEEE 802.11ac}
+
+\subsubsection{Changes to Previous Standards}
+
+
+\subsubsection{802.11ac Specific Features}
+
+
+
+\subsection{Future of Wireless Networks}
+
+
