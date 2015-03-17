@@ -2,32 +2,32 @@
 
 ** Surface [1/2]
  - [X] 80MHz vs 40MHz Indoor
- - [ ] 80MHz vs 40MHz Clear
+ - [X] 80MHz vs 40MHz Clear
 
 ** Macbook [2/3]
  - [X] 80MHz vs 40MHz Indoor
- - [ ] 80MHz vs 40MHz Clear
+ - [X] 80MHz vs 40MHz Clear
  - [X] solo indoor capture
 
 ** Intel [1/4]
  - [X] 80MHz vs 40MHz Indoor
- - [ ] 80MHz vs 40MHz Clear
+ - [X] 80MHz vs 40MHz Clear
  - [ ] MCS 8/9 vs 6/7 Indoor if possible
  - [ ] MCS 8/9 vs 6/7 Clear if possible
 
 * Data analysis tasks
-** 80 vs 40 thru walls (storage) [0/1]
+** [Sean] 80 vs 40 thru walls (storage) [0/1]
  - [ ] check on dbm
  - [ ] figure out whats going on?
 
-** graph dbm at indoor locations 80vs40 [1/5]
+** [David] graph dbm at indoor locations 80vs40 [1/5]
  - [X] pull out dbm for intel
  - [ ] pull out dbm for macbook
  - [ ] pull out dbm for surface
  - [ ] write script to generate avg and error bars
  - [ ] make graphs
 
-** iperf data [0/2]
+** [Jake] iperf data [0/2]
  - [ ] Parse out data
  - [ ] generate avgs and variance
 
@@ -41,3 +41,7 @@
   - iw phy phy0 interface add mon0 type monitor <flags> (probably want fcsfail and some other stuff)
   - ifup mon0
   - now you have a sorta monitor mon0 wifi thing
+  
+** Self Capture on OS X
+ - airport -c 48
+ - tcpdump -I -i en0 -P -w filename.pcap
