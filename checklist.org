@@ -32,6 +32,29 @@
  - [ ] generate avgs and variance
 
 
+* Report
+** Introduction
+** Background [Sean]
+ *** Wifi Proliferation
+ *** Previous Standards
+ *** IEEE 802.11ac
+  - What it fixes
+  - What it adds
+  - Where we are today with ac
+ *** Future of WiFi
+** Related Work [David]
+** Methods [All]
+** Results [All]
+ *** Beamforming Analysis
+ *** Channel Width Analysis
+ *** MCS 8 & 9 Analysis
+ *** TCP Congestion Control over 802.11ac
+  - OS X 10.10.2
+  - Linux 3.19
+  - Windows 8.1
+ *** iPerf Throughput Analysis
+** Further Work & Conclusion
+
 * Notes
 ** Monitor mode for intel
  - service network-manager stop
