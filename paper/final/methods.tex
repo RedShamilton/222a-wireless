@@ -12,13 +12,13 @@ without influencing or selecting it.
 \paragraph{RF Test Equipment}
 
 We used a spectrum analyzer that is capable of monitoring 2.4GHz and 5GHz WiFi
-signals allowing us to see all RF traffic in there spectrums beyond just WiFi.
+signals allowing us to see all RF traffic in the spectrums beyond just WiFi.
 We used it to observe active networks and to confirm that our clear testing
 location had minimal to no RF noise.
 
 \paragraph{Wireless APs}
 
-Our WAP was the latest hardware model of the Linksys WRT1900AC 802.11ac,
+Our WAP is the latest hardware model of the Linksys WRT1900AC 802.11ac,
 with a 1.2 GHz dual core ARM processor and 256MB of DDR3 RAM. We originally
 installed OpenWRT Chaos Calmer (Dev Branch) on the AP, because we believed it
 would give us complete configuration control and insight into what the AP is
@@ -33,9 +33,9 @@ We used a number of devices as 802.11ac clients, including an Apple Macbook Pro,
 a Microsoft Surface Pro 3, and a Lenovo \todo{???} with a Intel \todo{???} PCIe
 802.11ac capable wifi card installed.
 
-We also purchased an ASUS USB 801.11ac dongle so that we could
-utilize any other non-ac host as an ac host for testing. However after a small
-number of tests, the ASUS dongle failed.
+We also purchased an ASUS USB 801.11ac dongle so that we could utilize any other
+non-ac host as an ac host for testing. However after a small number of tests,
+the ASUS dongle failed.
 
 \subsection{Testing}
 
@@ -47,7 +47,9 @@ an iperf client on the hardwired device. This way the flow of data over wifi
 would be from the router to the wireless client. For a majority of our tests, we
 did four transfers of 250MB, though for some tests, we did one transfer lasting
 100 seconds. For a majority of tests, we captured packets either on the device
-doing the transfer itself, or on a nearby device using monitor mode.
+doing the transfer itself, or on a nearby device using monitor mode. This way
+we could get high level throughput information from iperf, and then examine the
+packet captures afterwards to help understand and explain our results.
 
 \paragraph{Locations}
 We wanted to perform our tests in both RF-clear and RF-noisy environments. For
@@ -80,7 +82,8 @@ able to run tests much further away from the router here than in the office.
 We tested each of our devices with the WAP set to both 80MHz and 40MHz.
 However, we were unable to force the WAP or any of the clients to stick to a
 single MCS, and we were unable to disable or influence beamforming on any of the
-clients...
+clients. Because of this, we were only able to observe the effects of
+beamforming or different MCSs as they normally occurred.
 
 \todo{ not done yet }
 
