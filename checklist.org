@@ -1,15 +1,15 @@
 * Data Capture Tasks
 
-** Surface [1/2]
+** Surface [2/2]
  - [X] 80MHz vs 40MHz Indoor
  - [X] 80MHz vs 40MHz Clear
 
-** Macbook [2/3]
- - [X] 80MHz vs 40MHz Indoor
- - [X] 80MHz vs 40MHz Clear
- - [X] solo indoor capture
+** Macbook [3/3]
+  - [X] 80MHz vs 40MHz Indoor
+  - [X] 80MHz vs 40MHz Clear
+  - [X] solo indoor capture
 
-** Intel [1/4]
+** Intel [2/4]
  - [X] 80MHz vs 40MHz Indoor
  - [X] 80MHz vs 40MHz Clear
  - [ ] MCS 8/9 vs 6/7 Indoor if possible
@@ -20,12 +20,16 @@
  - [ ] check on dbm
  - [ ] figure out whats going on?
 
-** [David] graph dbm at indoor locations 80vs40 [1/5]
+** [David] graph dbm at indoor locations 80vs40 [2/4]
  - [X] pull out dbm for intel
  - [ ] pull out dbm for macbook
- - [ ] pull out dbm for surface
- - [ ] write script to generate avg and error bars
+ - [X] write script to generate avg and error bars
  - [ ] make graphs
+
+** [David] graph beamform data [0/3]
+ - [ ] make intel graphs
+ - [ ] make macbook graphs
+ - [ ] talk about beamforming
 
 ** [Jake] iperf data [0/2]
  - [ ] Parse out data
@@ -35,24 +39,24 @@
 * Report
 ** Introduction
 ** Background [Sean]
- *** Wifi Proliferation
- *** Previous Standards
- *** IEEE 802.11ac
+*** Wifi Proliferation
+*** Previous Standards
+*** IEEE 802.11ac
   - What it fixes
   - What it adds
   - Where we are today with ac
- *** Future of WiFi
+*** Future of WiFi
 ** Related Work [David]
 ** Methods [All]
 ** Results [All]
- *** Beamforming Analysis
- *** Channel Width Analysis
- *** MCS 8 & 9 Analysis
- *** TCP Congestion Control over 802.11ac
+*** Beamforming Analysis
+*** Channel Width Analysis
+*** MCS 8 & 9 Analysis
+*** TCP Congestion Control over 802.11ac
   - OS X 10.10.2
   - Linux 3.19
   - Windows 8.1
- *** iPerf Throughput Analysis
+*** iPerf Throughput Analysis
 ** Further Work & Conclusion
 
 * Notes
@@ -64,7 +68,7 @@
   - iw phy phy0 interface add mon0 type monitor <flags> (probably want fcsfail and some other stuff)
   - ifup mon0
   - now you have a sorta monitor mon0 wifi thing
-  
+
 ** Self Capture on OS X
  - airport -c 48
  - tcpdump -I -i en0 -P -w filename.pcap
