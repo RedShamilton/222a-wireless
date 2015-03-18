@@ -60,6 +60,10 @@
 ** Further Work & Conclusion
 
 * Notes
+** Indoor Distances (according to trig)
+ - wall:226.05 inches
+ - water:277.91 inches
+ - storage:617.16 inches
 ** Monitor mode for intel
  - service network-manager stop
  - killall wpa_supplicant
