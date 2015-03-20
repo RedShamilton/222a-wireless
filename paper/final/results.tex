@@ -17,6 +17,10 @@ with both the Intel 7260 and the Macbook. Unfortunately the Surface
 was unable to provide radiotap headers during capture, so we have no
 information about its recieved signal strength.
 
+\tabcolsep=0.11cm
+
+
+
 \subsubsection{Outdoor Clean Testing}
 
 \begin{figure}[!h]
@@ -64,7 +68,12 @@ faster than outdoor testing. Figure~\ref{fig:intelinsidesignal} shows
 10 and 15 ft is explained by slightly better line-of-sight in the 15ft
 case over the 10ft testing location. \todo{need mac graph}
 
+
+
+
 \subsection{Beamforming}
+
+
 Ideally, we would compare a full non-beamformed conversation to a
 beamformed one here. Unfortunately, we were unable to disuade our
 client devices from advertising beamformee capabilities, and with
@@ -76,7 +85,20 @@ not beamform consistently, it is likely that there is a channel
 condition making beamforming tough. \todo{show fig with percentage
   over time?}  Thus, we have Figure~\ref{fig:intelindoorbeamresult}
 which would appear to indicate that beamforming \emph{halves} the
-incoming power rather than the predicted doubling.
+incoming power rather than the predicted doubling. Obviously this is
+not likely to be a realistic effect of beamforming, and thus an
+intentionally non-beamformed test would need to be run and
+compared. Outdoor data looks more plasuible, even if we still only
+have a few non-beamformed
+packets. Figure~\ref{fig:inteloutdoorbeambenefit} shows the benefits
+over distance for locations with a non-zero number of non-beamformed
+packets.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/Intel_Outside_Beamforming_Benefit}
+\caption{Intel Outdoor Beamforming Benefit}
+\label{fig:inteloutdoorbeambenefit}
+\end{figure}
 
 \begin{figure}[h!]
 \centering
@@ -89,6 +111,43 @@ incoming power rather than the predicted doubling.
 \label{fig:intelindoorbeamresult}
 \end{figure}
 
+\begin{figure}[b!]
+\centering
+\begin{tabular}{| c | c || c | c | c | c | c | c |}
+\hline
+Chip & MHz & 5ft & 10ft & 15ft & 19ft & 23ft & 51ft\\ \hline
+Intel & 40 & 0.999 & 1.0 & 0.999 & 1.0 & 0.999 & 0.655\\ \hline
+Intel & 80 & 0.999 & 1.0 & 1.0 & 1.0 & 0.999 & 0.964\\ \hline
+\end{tabular}
+\caption{Indoor Fraction of Packets Beamformed}
+\label{fig:indoorbeampercent}
+\end{figure}
+
+
+\begin{figure}[b!]
+\centering
+\begin{tabular}{| c | c || c | c | c | c | c | c | c | c |}
+\hline
+Chip & MHz & 3ft & 9ft & 15ft & 30ft & 60ft & 150ft & 300ft\\ \hline
+Intel & 40 & 0.988 & 0.999 & 0.968 & 1.0 & 0.983 & 0.539 & na\\ \hline
+Intel & 80 & 1.0 & 1.0 & 1.0 & 1.0 & 0.999 & 0.999 & 0.954\\ \hline
+Mac & 40 & 0.046 & 0.042 & 0.017 & 0.006 & 0.055 & 0.140 & na\\ \hline
+Mac & 80 & 0.081 & 0.062 & 0.055 & 0.033 & 0.048 & 0.105 & na\\ \hline
+\end{tabular}
+\caption{Outdoor Fraction of Packets Beamformed}
+\label{fig:outdoorbeampercent}
+\end{figure}
+
+
 While still relatively untrustworthy, our outdoor beamforming benefit
-measurements are much more in line with expectation.
-\todo{need percentage of beamformed packets data}
+measurements are much more in line with expectation. As shown in
+Figures~\ref{fig:indoorbeampercent} and \ref{fig:outdoorbeampercent}
+the Intel 7260 receives beamformed packets the vast majority of the
+time. While it appears the Macbook does not receive many beamformed
+packets, we believe that the radiotap headers it reports are
+inaccurate. For example, only 1 of 8 packets have a signal strength
+filled out, and many will be randomly missing other values. Thus, it
+is probable that even though it explicitly reports recording
+beamforming status on every packet, its reports cannot be
+trusted. They are omitted from indoor testing since they are even less
+plausible there.

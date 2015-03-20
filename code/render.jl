@@ -157,18 +157,29 @@ function signal_and_beam(x,divisor,typestr,walls)
                  "40MHz","80MHz","Distance (ft)","Signal Strength (dBm)",typestr*" Beamformed")
     end
     if length(fnb[:location])>0
-        drawlines1(fnb[:location],fnb[:beamant1]-fnb[:nobeamant1],fill(0,length(fnb[:nbt1std])),
-                   "Distance (ft)","Signal Gain (dBm)",typestr*" Beamforming Benefit 40MHz")
-    end
-    if length(enb[:location])>0
-        drawlines1(enb[:location],enb[:beamant1]-enb[:nobeamant1],fill(0,length(enb[:nbt1std])),
-                   "Distance (ft)","Signal Gain (dBm)",typestr*" Beamforming Benefit 80MHz")
+        if length(enb[:location])>0
+            drawlines2(fnb[:location],fnb[:beamant1]-fnb[:nobeamant1],fill(0,length(fnb[:nbt1std])),
+                       enb[:location],enb[:beamant1]-enb[:nobeamant1],fill(0,length(enb[:nbt1std])),
+                       "40MHz","80MHz","Distance (ft)","Signal Gain (dBm)",typestr*" Beamforming Benefit")
+        else
+            drawlines1(fnb[:location],fnb[:beamant1]-fnb[:nobeamant1],fill(0,length(fnb[:nbt1std])),
+                       "Distance (ft)","Signal Gain (dBm)",typestr*" Beamforming Benefit 40MHz")
+        end
+    else
+        if length(enb[:location])>0
+            drawlines1(enb[:location],enb[:beamant1]-enb[:nobeamant1],fill(0,length(enb[:nbt1std])),
+                       "Distance (ft)","Signal Gain (dBm)",typestr*" Beamforming Benefit 80MHz")
+        end
     end
     drawbar(0:length(fourtys[:location])-1,fourtys[:beamct]./(fourtys[:beamct]+fourtys[:nobeamcnt]),fourtys[:location],
             "Distance (ft)","Percentage of packets Beamformed",typestr*" Prevelance of Beamforming 40MHz")
     drawbar(0:length(eightys[:location])-1,eightys[:beamct]./(eightys[:beamct]+eightys[:nobeamcnt]),eightys[:location],
             "Distance (ft)","Percentage of packets Beamformed",typestr*" Prevelance of Beamforming 80MHz")
 
+    println("Percentage of beamformed packets 40MHz "*typestr)
+    println(fourtys[:beamct]./(fourtys[:beamct]+fourtys[:nobeamcnt]))
+    println("Percentage of beamformed packets 80MHz"*typestr)
+    println(eightys[:beamct]./(eightys[:beamct]+eightys[:nobeamcnt]))
 
 end
 
