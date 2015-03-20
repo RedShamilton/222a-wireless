@@ -26,17 +26,20 @@
  - [X] write script to generate avg and error bars
  - [ ] make graphs
 
-** [David] graph beamform data [0/3]
- - [ ] make intel graphs
- - [ ] make macbook graphs
- - [ ] talk about beamforming
+** [David] graph beamform data [3/3]
+ - [X] make intel graphs
+ - [X] make macbook graphs
+ - [X] talk about beamforming
 
-** [Jake] iperf data [0/2]
- - [ ] Parse out data
- - [ ] generate avgs and variance
+** [Jake] iperf data [2/2]
+ - [X] Parse out data
+ - [X] generate avgs and variance
 
 
 * Report
+** TODO From Alex
+ - [ ] mcs usage by location
+ - [ ] hold MCS constant, graph tcp throughput (filter on mcs)
 ** Introduction
 ** Background [Sean]
 *** Wifi Proliferation
