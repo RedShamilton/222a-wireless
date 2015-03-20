@@ -90,7 +90,7 @@ function drawlines2(x1,y1,std1,x2,y2,std2,t1,t2,xl,yl,name)
                     ymax=y2+std2,
                     color=[t2],
                     thm2, Geom.point,Geom.errorbar,Geom.line),
-    Guide.xlabel(xl),Guide.ylabel(yl),Guide.title(name),Scale.color_discrete_manual(c1,c2)))
+    Guide.xlabel(xl),Guide.ylabel(yl),Scale.color_discrete_manual(c1,c2)))
 end
 
 function drawlines4(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,t1,t2,t3,t4,xl,yl,name)
@@ -120,7 +120,7 @@ function drawlines4(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,t1,t2,t3,t4,xl,y
                     ymax=y4+std4,
                     color=[t4],
                     thm1, Geom.point,Geom.errorbar,Geom.line),
-    Guide.xlabel(xl),Guide.ylabel(yl),Guide.title(name),Scale.color_discrete_manual(c1,c2,c3,c4)))
+    Guide.xlabel(xl),Guide.ylabel(yl),Scale.color_discrete_manual(c1,c2,c3,c4)))
 end
 
 
@@ -188,5 +188,5 @@ iperf_general(rd_iperf_outside,"surface","Outside")
 
 signal_and_beam(rd_i_inside,12,"Intel Inside",true)
 #signal_and_beam(rd_mac_inside,12,"Mac Inside",true)
-signal_and_beam(rd_i_inside,1,"Intel Outside",false)
+signal_and_beam(rd_i_outside,1,"Intel Outside",false)
 signal_and_beam(rd_mac_outside,1,"Mac Outside",false)

@@ -1,4 +1,5 @@
 \section{Methodology}
+\label{sec:methodology}
 
 We tested various devices against our 802.11ac WAP in both clear and RF-noisy
 environments. We originally planned to measure the differences between several
@@ -29,13 +30,16 @@ After doing so, our results returned to the expected levels for throughput.
 
 \paragraph{Clients}
 
-We used a number of devices as 802.11ac clients, including an Apple Macbook Pro,
-a Microsoft Surface Pro 3, and a Lenovo \todo{???} with a Intel \todo{???} PCIe
-802.11ac capable wifi card installed.
+We used a number of devices as 802.11ac clients, including an Apple
+Macbook Pro \todo{get card}, a Microsoft Surface Pro 3 \todo{?}, and a
+Lenovo T420s (running Debian Jessie on a mainline 3.19 Linux kernel)
+with a Intel 7260 series PCIe 802.11ac capable wifi card installed.
 
-We also purchased an ASUS USB 801.11ac dongle so that we could utilize any other
-non-ac host as an ac host for testing. However after a small number of tests,
-the ASUS dongle failed.
+We also purchased an ASUS USB-AC56 801.11ac dongle so that we could
+utilize any other non-ac host as an ac host for testing. However after
+a small number of tests, the ASUS dongle began to experience
+intermittent USB disconnections. Paired with its poor driver
+performance, we did not continue testing with it.
 
 \subsection{Testing}
 
@@ -52,14 +56,18 @@ we could get high level throughput information from iperf, and then examine the
 packet captures afterwards to help understand and explain our results.
 
 \paragraph{Locations}
-We wanted to perform our tests in both RF-clear and RF-noisy environments. For
-the noisy environment, we used our offices in the CSE building, which are
-surrounding by 802.11b/g/n/ac APs and devices. For the clear environment, we
-performed initial promising tests in the basement level of the Hopkins parking
-structure, however we were concerned that the low concrete beams in the ceiling
-could be inadvertently effecting our results. We then moved out to the parking
-lot behind the Torrey Pines glider port. Here we had a wide open space with no
-RF-interference according to our spectrum analyzer.
+We wanted to perform our tests in both RF-clear and RF-noisy
+environments. For the noisy environment, we used our offices in the
+CSE building, which are surrounding by 802.11b/g/n/ac APs and
+devices. For the clear environment, we performed initial promising
+tests in the basement level of the Hopkins parking structure, however
+we were concerned that the low concrete beams in the ceiling could be
+inadvertently effecting our results. We then moved out to the parking
+lot behind the Torrey Pines glider port. Here we had a wide open space
+with no RF-interference according to our spectrum analyzer. Note that
+our RF scan preceeded our actual testing by a little over a week, so
+it is possible that at the time of testing there was a source of noise
+in the 5GHz range.
 
 
 \paragraph{Indoor}
@@ -90,11 +98,11 @@ beamforming or different MCSs as they normally occurred.
 
 \subsection{MU-MIMO Testing}
 
-We also originally intended to measure the effect of MU-MIMO on throughput and
-packet drops, however we ran into some complications. Of the three chipset
-drivers that support MU-MIMO, none have any products that are currently on the
-market \todo{david, is this sentence correct?}. So although our WAP supported
-MU-MIMO, no clients exist that support MU-MIMO.
+We also originally intended to measure the effect of MU-MIMO on
+throughput and packet drops, however we ran into some
+complications. Of the three chipset drivers that support MU-MIMO, none
+have any client products that are currently on the market. So although
+our WAP supported MU-MIMO, no clients exist that support MU-MIMO.
 
 Despite this, we set up what we believe is a strong experimental design to test
 MU-MIMO and confirm that it is occurring through monitoring the clients. The
@@ -116,6 +124,3 @@ to \todo{cite ucsd wifi paper}.
 We believe that, given proper MU-MIMO hardward, this testing setup would be
 capable of confirming that MU-MIMO is indeed happening, and allowing us to
 reason about its effects on the network.
-
-
-
