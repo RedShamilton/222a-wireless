@@ -46,7 +46,6 @@ function drawbar(x1,y1,lbl,xl,yl,name)
               x=x1,
               y=y1,
               thm1,
-              minor_label_color=color("#4e5c67"),
               Scale.x_discrete(labels=c->lbl[c+1]),
               Scale.y_continuous(minvalue=0),
               Geom.bar,
@@ -190,4 +189,4 @@ iperf_general(rd_iperf_outside,"surface","Outside")
 signal_and_beam(rd_i_inside,12,"Intel Inside",true)
 #signal_and_beam(rd_mac_inside,12,"Mac Inside",true)
 signal_and_beam(rd_i_inside,1,"Intel Outside",false)
-signal_and_beam(rd_mac_outside,11,"Mac Outside",true)
+signal_and_beam(rd_mac_outside,1,"Mac Outside",false)
