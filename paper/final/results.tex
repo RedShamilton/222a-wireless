@@ -184,3 +184,25 @@ Figure~\ref{fig:outsidethru} shows outdoor throughput.
 \caption{TCP Outdoor Throughput}
 \label{fig:outsidethru}
 \end{figure}
+
+\subsection{MCS}
+For indoors we have shown the time bucketed most common MCS during
+capture by location. Figure~\ref{fig:imcs40time} and
+\ref{fig:imcs40time} show the most common MCS each second for all
+indoor distances. As can be seen, 40MHz has a far more stable MCS
+selection, while 80MHz at mid ranges tends to switch rapidly.  We have
+cut off the time at 60seconds, even though the 51ft transfer lasted
+far longer, it did not change MCS ever.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/Intel_Inside_40_MCS}
+\caption{Most Common MCS per Second Indoors for Intel at 40MHz}
+\label{fig:imcs40time}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/Intel_Inside_80_MCS}
+\caption{Most Common MCS per Second Indoors for Intel at 40MHz}
+\label{fig:imcs80time}
+\end{figure}

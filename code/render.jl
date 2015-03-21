@@ -184,6 +184,39 @@ end
 
 
 
+function drawlines6ne(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,t1,t2,t3,t4,t5,t6,xl,yl,name)
+    draw(PDF(figures*replace(name," ","_")*".pdf", xinch*2,yinch),
+         plot(
+              layer(x=x1,
+                    y=y1,
+                    color=[t1],
+                    thm1, Geom.line),
+              layer(x=x2,
+                    y=y2,
+                    color=[t2],
+                    thm1, Geom.line),
+              layer(x=x3,
+                    y=y3,
+                    color=[t3],
+                    thm1, Geom.line),
+              layer(x=x4,
+                    y=y4,
+                    color=[t4],
+                    thm1, Geom.line),
+              layer(x=x5,
+                    y=y5,
+                    color=[t5],
+                    thm1, Geom.line),
+              layer(x=x6,
+                    y=y6,
+                    color=[t6],
+                    thm1, Geom.line),
+    Guide.yticks(ticks=[0:1:9]),
+    Guide.xticks(ticks=[0:10:60]),
+    Guide.xlabel(xl),Guide.ylabel(yl)))
+end
+
+
 
 function iperf_general(x,chipn,typestr)
     chipdata = x[x[:card].== chipn,:]
@@ -295,3 +328,35 @@ drawlines6(intel_f[:location],intel_f[:avg],intel_f[:std],intel_e[:location],int
            mac_f[:location],mac_f[:avg],mac_f[:std],mac_e[:location],mac_e[:avg],mac_e[:std],
            surface_f[:location],surface_f[:avg],surface_f[:std],surface_e[:location],surface_e[:avg],surface_e[:std],
            "Intel 40MHz","Intel 80MHz","Mac 40MHz","Mac 80MHz","Surface 40MHz","Surface 80MHz","Distance (ft)","Throughput (Mbits/sec)","allchip Outside TCP Throughput")
+
+
+#insane MCS shit
+imcs40_5 = readtable(analysis*"inside/intel_40MHz_5ft.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_10 = readtable(analysis*"inside/intel_40MHz_10ft.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_15 = readtable(analysis*"inside/intel_40MHz_15ft.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_wall = readtable(analysis*"inside/intel_40MHz_wall.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_water = readtable(analysis*"inside/intel_40MHz_water.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_storage = readtable(analysis*"inside/intel_40MHz_storage.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_storage = imcs40_storage[imcs40_storage[:second] .< 61,:]
+drawlines6ne(imcs40_5[:second],imcs40_5[:mcsavg],
+           imcs40_10[:second],imcs40_10[:mcsavg],
+           imcs40_15[:second],imcs40_15[:mcsavg],
+           imcs40_wall[:second],imcs40_wall[:mcsavg],
+           imcs40_water[:second],imcs40_water[:mcsavg],
+           imcs40_storage[:second],imcs40_storage[:mcsavg],
+           "5 ft","10 ft","15 ft","19 ft","23 ft","51 ft","Time (seconds)","Most common MCS for last second","Intel Inside 40 MCS")
+
+imcs80_5 = readtable(analysis*"inside/intel_80MHz_5ft.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_10 = readtable(analysis*"inside/intel_80MHz_10ft.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_15 = readtable(analysis*"inside/intel_80MHz_15ft.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_wall = readtable(analysis*"inside/intel_80MHz_wall.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_water = readtable(analysis*"inside/intel_80MHz_water.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_storage = readtable(analysis*"inside/intel_80MHz_storage.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_storage = imcs80_storage[imcs80_storage[:second] .< 61,:]
+drawlines6ne(imcs80_5[:second],imcs80_5[:mcsavg],
+           imcs80_10[:second],imcs80_10[:mcsavg],
+           imcs80_15[:second],imcs80_15[:mcsavg],
+           imcs80_wall[:second],imcs80_wall[:mcsavg],
+           imcs80_water[:second],imcs80_water[:mcsavg],
+           imcs80_storage[:second],imcs80_storage[:mcsavg],
+           "5 ft","10 ft","15 ft","19 ft","23 ft","51 ft","Time (seconds)","Most common MCS for last second","Intel Inside 80 MCS")
