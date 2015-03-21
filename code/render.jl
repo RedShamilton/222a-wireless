@@ -93,7 +93,7 @@ function drawlines2(x1,y1,std1,x2,y2,std2,t1,t2,xl,yl,name)
     Guide.xlabel(xl),Guide.ylabel(yl),Scale.color_discrete_manual(c1,c2)))
 end
 
-function drawlines4(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,t1,t2,t3,t4,xl,yl,name)
+function drawlines6walls(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,x5,y5,std5,x6,y6,std6,t1,t2,t3,t4,t5,t6,xl,yl,name)
     draw(PDF(figures*replace(name," ","_")*".pdf", xinch,yinch),
          plot(
               layer(x=x1,
@@ -120,8 +120,68 @@ function drawlines4(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,t1,t2,t3,t4,xl,y
                     ymax=y4+std4,
                     color=[t4],
                     thm1, Geom.point,Geom.errorbar,Geom.line),
-    Guide.xlabel(xl),Guide.ylabel(yl),Scale.color_discrete_manual(c1,c2,c3,c4)))
+              layer(x=x5,
+                    y=y5,
+                    ymin=y5-std5,
+                    ymax=y5+std5,
+                    color=[t5],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x6,
+                    y=y6,
+                    ymin=y6-std6,
+                    ymax=y6+std6,
+                    color=[t6],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(
+                    xintercept=[18.0, 22.0,30.0,50.0],
+                    Geom.vline(color=color("red"),size=0.1mm),
+                    color=["Walls"]
+                    ),
+    Guide.xlabel(xl),Guide.ylabel(yl)))
 end
+
+function drawlines6(x1,y1,std1,x2,y2,std2,x3,y3,std3,x4,y4,std4,x5,y5,std5,x6,y6,std6,t1,t2,t3,t4,t5,t6,xl,yl,name)
+    draw(PDF(figures*replace(name," ","_")*".pdf", xinch,yinch),
+         plot(
+              layer(x=x1,
+                    y=y1,
+                    ymin=y1-std1,
+                    ymax=y1+std1,
+                    color=[t1],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x2,
+                    y=y2,
+                    ymin=y2-std2,
+                    ymax=y2+std2,
+                    color=[t2],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x3,
+                    y=y3,
+                    ymin=y3-std3,
+                    ymax=y3+std3,
+                    color=[t3],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x4,
+                    y=y4,
+                    ymin=y4-std4,
+                    ymax=y4+std4,
+                    color=[t4],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x5,
+                    y=y5,
+                    ymin=y5-std5,
+                    ymax=y5+std5,
+                    color=[t5],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+              layer(x=x6,
+                    y=y6,
+                    ymin=y6-std6,
+                    ymax=y6+std6,
+                    color=[t6],
+                    thm1, Geom.point,Geom.errorbar,Geom.line),
+    Guide.xlabel(xl),Guide.ylabel(yl)))
+end
+
 
 
 
@@ -185,7 +245,7 @@ end
 
 #get data
 rd_i_inside = readtable(analysis*"inside/i_avg",separator=' ')
-#rd_mac_inside = readtable(analysis*"inside/m_avg",separator=' ')
+rd_mac_inside = readtable(analysis*"inside/m_avg",separator=' ')
 rd_i_outside = readtable(analysis*"outside/i_avg",separator=' ')
 rd_mac_outside = readtable(analysis*"outside/m_avg",separator=' ')
 rd_iperf_inside = readtable(analysis*"inside/ipf/data_fixed",separator=' ')
@@ -196,8 +256,42 @@ rd_iperf_outside = readtable(analysis*"outside/ipf/data_fixed",separator=' ')
 iperf_general(rd_iperf_outside,"intel","Outside")
 iperf_general(rd_iperf_outside,"mac","Outside")
 iperf_general(rd_iperf_outside,"surface","Outside")
+iperf_general(rd_iperf_inside,"intel","Inside")
+iperf_general(rd_iperf_inside,"mac","Inside")
+iperf_general(rd_iperf_inside,"surface","Inside")
+
+
 
 signal_and_beam(rd_i_inside,12,"Intel Inside",true)
 #signal_and_beam(rd_mac_inside,12,"Mac Inside",true)
 signal_and_beam(rd_i_outside,1,"Intel Outside",false)
 signal_and_beam(rd_mac_outside,1,"Mac Outside",false)
+
+#Indoor stuff
+intel_f = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "intel",:],40)
+intel_e = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "intel",:],80)
+
+mac_f = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "mac",:],40)
+mac_e = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "mac",:],80)
+
+surface_f = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "surface",:],40)
+surface_e = getmhz(rd_iperf_inside[rd_iperf_inside[:card].== "surface",:],80)
+
+drawlines6walls(intel_f[:location]./12,intel_f[:avg],intel_f[:std],intel_e[:location]./12,intel_e[:avg],intel_e[:std],
+           mac_f[:location]./12,mac_f[:avg],mac_f[:std],mac_e[:location]./12,mac_e[:avg],mac_e[:std],
+           surface_f[:location]./12,surface_f[:avg],surface_f[:std],surface_e[:location]./12,surface_e[:avg],surface_e[:std],
+           "Intel 40MHz","Intel 80MHz","Mac 40MHz","Mac 80MHz","Surface 40MHz","Surface 80MHz","Distance (ft)","Throughput (Mbits/sec)","allchip Inside TCP Throughput")
+
+intel_f = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "intel",:],40)
+intel_e = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "intel",:],80)
+
+mac_f = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "mac",:],40)
+mac_e = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "mac",:],80)
+
+surface_f = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "surface",:],40)
+surface_e = getmhz(rd_iperf_outside[rd_iperf_outside[:card].== "surface",:],80)
+
+drawlines6(intel_f[:location],intel_f[:avg],intel_f[:std],intel_e[:location],intel_e[:avg],intel_e[:std],
+           mac_f[:location],mac_f[:avg],mac_f[:std],mac_e[:location],mac_e[:avg],mac_e[:std],
+           surface_f[:location],surface_f[:avg],surface_f[:std],surface_e[:location],surface_e[:avg],surface_e[:std],
+           "Intel 40MHz","Intel 80MHz","Mac 40MHz","Mac 80MHz","Surface 40MHz","Surface 80MHz","Distance (ft)","Throughput (Mbits/sec)","allchip Outside TCP Throughput")

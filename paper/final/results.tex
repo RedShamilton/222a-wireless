@@ -61,12 +61,22 @@ however, it is hard to draw any specific conclusions. \todo{this test
 \label{fig:intelinsidesignal}
 \end{figure}
 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/Mac_Inside_Beamformed}
+\caption{mac Indoor Signal Strength Over Distance}
+\label{fig:macinsidesignal}
+\end{figure}
+
 Indoor signal strength does, as expected, drop off significantly
 faster than outdoor testing. Figure~\ref{fig:intelinsidesignal} shows
 (along with approximate wall locations) the signal strength the Intel
 7260 recieved in our office testing. The similar strengths seen betwen
 10 and 15 ft is explained by slightly better line-of-sight in the 15ft
-case over the 10ft testing location. \todo{need mac graph}
+case over the 10ft testing location. Figure~\ref{fig:macinsidesignal}
+shows the same maps for the Macbook. Unfortunately the radiotap
+headers for the Macbook are inconsistently filled out, so these are
+very rough estimates.
 
 
 
@@ -151,3 +161,26 @@ is probable that even though it explicitly reports recording
 beamforming status on every packet, its reports cannot be
 trusted. They are omitted from indoor testing since they are even less
 plausible there.
+
+
+\subsection{TCP Throughput}
+While not incredibly meaningful alone, we did record TCP throughput
+for all our tests. See the discussion section for our best analysis of
+what occured.
+
+Figure~\ref{fig:insidethru} shows indoor throughput, and
+Figure~\ref{fig:outsidethru} shows outdoor throughput.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/allchip_Inside_TCP_Throughput}
+\caption{TCP Indoor Throughput}
+\label{fig:insidethru}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/allchip_Outside_TCP_Throughput}
+\caption{TCP Outdoor Throughput}
+\label{fig:outsidethru}
+\end{figure}
