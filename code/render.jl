@@ -212,6 +212,7 @@ function drawlines6ne(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,t1,t2,t3,t4,t5,t6,xl,y
                     color=[t6],
                     thm1, Geom.line),
     Guide.yticks(ticks=[0:1:9]),
+    Guide.xticks(ticks=[0:10:100]),
     Guide.xlabel(xl),Guide.ylabel(yl)))
 end
 
