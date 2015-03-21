@@ -15,7 +15,7 @@ We were, however, able to measure beamformed signal strength over
 distance and through objects with 80MHz vs 40MHz quite effectively
 with both the Intel 7260 and the Macbook. Unfortunately the Surface
 was unable to provide radiotap headers during capture, so we have no
-information about its recieved signal strength.
+information about its received signal strength.
 
 \tabcolsep=0.11cm
 
@@ -40,13 +40,13 @@ information about its recieved signal strength.
 
 Figure~\ref{fig:inteloutsidesignal} is a perfect example of expected
 behavior. As we move away from the WAP, signal strength decreases by
-the square of the distance, and since dBm is a logrithmic scale, we
+the square of the distance, and since dBm is a logarithmic scale, we
 obtain a log-like drop-off! As expected, 80MHz outperforms 40MHz in
 all cases, and even manages to maintain a connection over longer
 distances.
 
-Somewhat inexplicibly (a common theme in the collected data) the
-Macbook (Figure \ref{fig:macoutsidesignal}) had a similar dropoff, but
+Somewhat inexplicably (a common theme in the collected data) the
+Macbook (Figure \ref{fig:macoutsidesignal}) had a similar drop-off, but
 40MHz consistently outperformed 80MHz! Given the variance shown
 however, it is hard to draw any specific conclusions. \todo{this test
   was at the same time as the other...}
@@ -71,7 +71,7 @@ however, it is hard to draw any specific conclusions. \todo{this test
 Indoor signal strength does, as expected, drop off significantly
 faster than outdoor testing. Figure~\ref{fig:intelinsidesignal} shows
 (along with approximate wall locations) the signal strength the Intel
-7260 recieved in our office testing. The similar strengths seen betwen
+7260 received in our office testing. The similar strengths seen between
 10 and 15 ft is explained by slightly better line-of-sight in the 15ft
 case over the 10ft testing location. Figure~\ref{fig:macinsidesignal}
 shows the same maps for the Macbook. Unfortunately the radiotap
@@ -85,10 +85,10 @@ very rough estimates.
 
 
 Ideally, we would compare a full non-beamformed conversation to a
-beamformed one here. Unfortunately, we were unable to disuade our
+beamformed one here. Unfortunately, we were unable to dissuade our
 client devices from advertising beamformee capabilities, and with
 stock firmware the WAP cannot have beamformer capabilities disabled.
-This means that while we can compare the recieved signal strength for
+This means that while we can compare the received signal strength for
 beamformed packets vs non-beamformed packets, this is likely to be
 biased \emph{against} beamforming looking good. If the WAP decides to
 not beamform consistently, it is likely that there is a channel
@@ -98,7 +98,7 @@ which would appear to indicate that beamforming \emph{halves} the
 incoming power rather than the predicted doubling. Obviously this is
 not likely to be a realistic effect of beamforming, and thus an
 intentionally non-beamformed test would need to be run and
-compared. Outdoor data looks more plasuible, even if we still only
+compared. Outdoor data looks more plausible, even if we still only
 have a few non-beamformed
 packets. Figure~\ref{fig:inteloutdoorbeambenefit} shows the benefits
 over distance for locations with a non-zero number of non-beamformed
@@ -166,7 +166,7 @@ plausible there.
 \subsection{TCP Throughput}
 While not incredibly meaningful alone, we did record TCP throughput
 for all our tests. See the discussion section for our best analysis of
-what occured.
+what occurred.
 
 Figure~\ref{fig:insidethru} shows indoor throughput, and
 Figure~\ref{fig:outsidethru} shows outdoor throughput.
