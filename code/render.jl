@@ -212,7 +212,7 @@ function drawlines6ne(x1,y1,x2,y2,x3,y3,x4,y4,x5,y5,x6,y6,t1,t2,t3,t4,t5,t6,xl,y
                     color=[t6],
                     thm1, Geom.line),
     Guide.yticks(ticks=[0:1:9]),
-    Guide.xticks(ticks=[0:10:100]),
+    Guide.xticks(ticks=[0:10:60]),
     Guide.xlabel(xl),Guide.ylabel(yl)))
 end
 
@@ -337,6 +337,7 @@ imcs40_15 = readtable(analysis*"inside/intel_40MHz_15ft.2.dbm_beamq_beam_nssMCSd
 imcs40_wall = readtable(analysis*"inside/intel_40MHz_wall.2.dbm_beamq_beam_nssMCSdata",separator=' ')
 imcs40_water = readtable(analysis*"inside/intel_40MHz_water.2.dbm_beamq_beam_nssMCSdata",separator=' ')
 imcs40_storage = readtable(analysis*"inside/intel_40MHz_storage.2.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs40_storage = imcs40_storage[imcs40_storage[:second] .< 61,:]
 drawlines6ne(imcs40_5[:second],imcs40_5[:mcsavg],
            imcs40_10[:second],imcs40_10[:mcsavg],
            imcs40_15[:second],imcs40_15[:mcsavg],
@@ -351,6 +352,7 @@ imcs80_15 = readtable(analysis*"inside/intel_80MHz_15ft.1.dbm_beamq_beam_nssMCSd
 imcs80_wall = readtable(analysis*"inside/intel_80MHz_wall.1.dbm_beamq_beam_nssMCSdata",separator=' ')
 imcs80_water = readtable(analysis*"inside/intel_80MHz_water.1.dbm_beamq_beam_nssMCSdata",separator=' ')
 imcs80_storage = readtable(analysis*"inside/intel_80MHz_storage.1.dbm_beamq_beam_nssMCSdata",separator=' ')
+imcs80_storage = imcs80_storage[imcs80_storage[:second] .< 61,:]
 drawlines6ne(imcs80_5[:second],imcs80_5[:mcsavg],
            imcs80_10[:second],imcs80_10[:mcsavg],
            imcs80_15[:second],imcs80_15[:mcsavg],
