@@ -30,8 +30,8 @@ After doing so, our results returned to the expected levels for throughput.
 
 \paragraph{Clients}
 
-We used a number of devices as 802.11ac clients, including an Apple
-Macbook Pro \todo{get card}, a Microsoft Surface Pro 3 \todo{?}, and a
+We used a number of devices as 802.11ac clients, including an 2013 Apple
+Macbook Pro 15" Retina, a Microsoft Surface Pro 3, and a
 Lenovo T420s (running Debian Jessie on a mainline 3.19 Linux kernel)
 with a Intel 7260 series PCIe 802.11ac capable wifi card installed.
 
@@ -46,7 +46,7 @@ performance, we did not continue testing with it.
 \paragraph{Setup}
 To run our tests, we connected one computer via ethernet cable to the AP, and
 then connected the device we were testing over 802.11ac wireless. We would then
-run an iperf version 2 \todo{more specific} server on the wireless client, and
+run an iperf version 2 server on the wireless client, and
 an iperf client on the hardwired device. This way the flow of data over wifi
 would be from the router to the wireless client. For a majority of our tests, we
 did four transfers of 250MB, though for some tests, we did one transfer lasting
@@ -87,14 +87,14 @@ Out at the glider port, we measured out several different distances from the
 router and ran tests from there. Because of the size of the parking lot, we were
 able to run tests much further away from the router here than in the office.
 
-\paragraph{ \todo{title this better} Things we measured }
+\paragraph{Measurements}
 We tested each of our devices with the WAP set to both 80MHz and 40MHz.
 However, we were unable to force the WAP or any of the clients to stick to a
 single MCS, and we were unable to disable or influence beamforming on any of the
 clients. Because of this, we were only able to observe the effects of
-beamforming or different MCSs as they normally occurred.
-
-\todo{ not done yet }
+beamforming or different MCSs as they normally occurred. We also captured throughput
+from the iperf utility to measure TCP performance as a function of distance for the measurements
+above as a function of distance.
 
 \subsection{MU-MIMO Testing}
 
@@ -118,8 +118,7 @@ Then, connected via ethernet to the AP will be two iperf clients, so that data
 flow travels from the router to the wireless clients. A third device will be
 connected to the AP via ethernet which broadcasts an increasing index and a
 64-bit timestamp every 100 milliseconds. This way, we can correlate runs of
-packets between broadcasts with matching indexes and monitor clock skew, similar
-to \todo{cite ucsd wifi paper}.
+packets between broadcasts with matching indexes and monitor clock skew.
 
 We believe that, given proper MU-MIMO hardward, this testing setup would be
 capable of confirming that MU-MIMO is indeed happening, and allowing us to
