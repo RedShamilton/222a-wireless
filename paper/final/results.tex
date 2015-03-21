@@ -4,7 +4,7 @@ both indoor and outdoor environments. Unfortunately, as detailed in
 \ref{sec:methodology} we were unable to coherently measure the
 performance of different MCS settings. Additionally, we ran out of
 time to gather intentionally non-beamformed data for all of the
-clients. \todo{discuss what}
+clients. 
 
 All graphs in this section are generated from packet captures
 performed by the \texttt{iperf} client unless otherwise noted. Error
@@ -48,8 +48,7 @@ distances.
 Somewhat inexplicibly (a common theme in the collected data) the
 Macbook (Figure \ref{fig:macoutsidesignal}) had a similar dropoff, but
 40MHz consistently outperformed 80MHz! Given the variance shown
-however, it is hard to draw any specific conclusions. \todo{this test
-  was at the same time as the other...}
+however, it is hard to draw any specific conclusions. 
 
 \subsubsection{Indoor Noisy Testing}
 
@@ -92,8 +91,7 @@ This means that while we can compare the recieved signal strength for
 beamformed packets vs non-beamformed packets, this is likely to be
 biased \emph{against} beamforming looking good. If the WAP decides to
 not beamform consistently, it is likely that there is a channel
-condition making beamforming tough. \todo{show fig with percentage
-  over time?}  Thus, we have Figure~\ref{fig:intelindoorbeamresult}
+condition making beamforming tough. Thus, we have Figure~\ref{fig:intelindoorbeamresult}
 which would appear to indicate that beamforming \emph{halves} the
 incoming power rather than the predicted doubling. Obviously this is
 not likely to be a realistic effect of beamforming, and thus an
@@ -192,7 +190,7 @@ capture by location. Figure~\ref{fig:imcs40time} and
 indoor distances. As can be seen, 40MHz has a far more stable MCS
 selection, while 80MHz at mid ranges tends to switch rapidly.  We have
 cut off the time at 60seconds, even though the 51ft transfer lasted
-far longer, it did not change MCS ever.
+far longer, it did not change MCS ever. 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{figures/Intel_Inside_40_MCS}
